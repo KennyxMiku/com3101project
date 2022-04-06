@@ -1,0 +1,127 @@
+/*https://mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
+*/
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<slot>
+	<slot id="1">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+	<slot id="2">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="3">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="4">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="5">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="6">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="7">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="8">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="9">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="10">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="11">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="12">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="13">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="14">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="15">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="16">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="17">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="18">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="19">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="20">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="21">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="22">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="23">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+        <slot id="24">
+		<name>Pankaj</name>
+		<price>5000</price>
+                <owner>0</owner>
+	</slot>
+
+</slot>
+
