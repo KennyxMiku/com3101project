@@ -1,7 +1,7 @@
 /*https://mkyong.com/java/how-to-read-xml-file-in-java-dom-parser/
 */
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<slot>
+<slots>
 	<slot id="1">
 		<name>Start</name>
 		<price>0</price>
@@ -94,10 +94,5 @@
 		<name>Pankaj</name>
 		<price>5000</price>
 	</slot>
-        <slot id="24">
-		<name>Pankaj</name>
-		<price>5000</price>
-	</slot>
-
-</slot>
+</slots>
 
