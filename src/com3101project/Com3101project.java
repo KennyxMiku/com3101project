@@ -4,12 +4,14 @@
  */
 package com3101project;
 import java.beans.XMLEncoder;
+import java.util.Scanner;
 
 /**
  *
  * @author kenny
  */
 public class Com3101project {
+     Scanner temp = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
