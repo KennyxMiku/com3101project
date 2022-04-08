@@ -13,16 +13,15 @@ public class Slot {
     private String id;
     private String name;
     private String price;
-    private String owner;
+    private String owner="0";
     
     public Slot(String id,String name, String price){
     this.id=id;
     this.name=name;
     this.price=price;
-    owner="0";
     }
     
-    public Slot(String id,String name, String price,String owner){
+    public Slot(String id,String name, String price, String owner){
     this.id=id;
     this.name=name;
     this.price=price;
