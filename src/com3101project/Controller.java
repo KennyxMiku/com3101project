@@ -18,7 +18,7 @@ public class Controller {
     public void setModel(Model m) {
         this.model = m;        
     }
-    int a;
+    int b;
 
 
 }
