@@ -17,8 +17,24 @@ public class Com3101project {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        testslot a= new testslot();
-        a.testing();
+        View view = new View();
+        Model model = new Model();
+        Controller control = new Controller();
+        model.setController(control);
+        control.setModel(model);
+        control.setView(view);
+        view.setController(control);
+        view.setModel(model);
+        
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                view.setVisible(true);
+            }
+        });
+        
+        
+        
     }
     
 }
