@@ -22,6 +22,13 @@ public class Player {
     status=pStatus;
     position=pPosition;
     }
+    public void remove(String slot){
+        slotOwned.removeIf(e -> e.contains(slot));;
+    }
+    
+    public void add(String slot){
+        slotOwned.add(slot);
+    }
     
     public String getId() {
         return id;
@@ -63,4 +70,5 @@ public class Player {
         this.slotOwned = slotOwned;
     }
    
+    
 }

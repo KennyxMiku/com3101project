@@ -25,9 +25,19 @@ public class Model {
         players [4]=new Player("4",2000,false,0);
         slots = new Slot[23];
         load();
-        testPrintSlot();
-        editSlot("1","Central","1000","0");
-        testPrintSlot();
+        testPrintPlayer();
+        editOwner("6","4");
+        editOwner("5","4");
+        editOwner("3","2");
+        editOwner("2","4");
+        editOwner("5","2");
+        editOwner("22","2");
+        editOwner("5","1");
+        editOwner("14","3");
+        editOwner("5","3");
+        testPrintPlayer();
+        //editSlot("1","Central","1000");
+        //testPrintSlot();
     }
     //
     public void load(){ 
@@ -73,7 +83,7 @@ public class Model {
         players[Integer.parseInt(playerId)].setBalance(amount);
     }
     
-    public void editSlot( String id, String name, String price, String owner){
+    public void editSlot( String id, String name, String price){
         
         String path = "slot.csv";
         String temp="temp.csv";
@@ -113,11 +123,21 @@ public class Model {
             e.printStackTrace();
         }
         load();
-        for(int i=0;i<23;i++){
-            if(slots[i].getId().equals(id)){
-                slots[i].setOwner(owner);
-            }
-        }
+      
+    }
+    
+    public void editOwner(String slot, String owner){
+        int slotNum=Integer. parseInt(slot);
+        int player=Integer. parseInt(owner);
+        if(slots[slotNum].getOwner().equals("0")){
+            slots[slotNum].setOwner(owner);
+            players[player].add(slot);
+        }else{ 
+           int playerNum=Integer. parseInt(slots[slotNum].getOwner());
+           slots[slotNum].setOwner(owner);
+           players[playerNum].remove(slot);
+           players[player].add(slot);
+        }   
     }
     
     public void testPrintPlayer(){
