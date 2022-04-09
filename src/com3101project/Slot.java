@@ -21,12 +21,7 @@ public class Slot {
     this.price=price;
     }
     
-    public Slot(String id,String name, String price, String owner){
-    this.id=id;
-    this.name=name;
-    this.price=price;
-    this.owner=owner;
-    }
+
     
     public String getOwner() {
         return owner;

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package com3101project;
-import java.beans.XMLEncoder;
+
 import java.util.*;
 
 /**
@@ -25,7 +25,7 @@ public class Com3101project {
         control.setView(view);
         view.setController(control);
         view.setModel(model);
-        
+        model.newGame();
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

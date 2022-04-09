@@ -14,14 +14,13 @@ public class Player {
     private int balance;
     private boolean status;
     private int position;
-    private ArrayList slotOwned;
+    private ArrayList<String> slotOwned = new ArrayList<>();;
     
-    public Player(String id,int balance, boolean status, int position, ArrayList slot){
-    this.id=id;
-    this.balance=balance;
-    this.status=status;
-    this.position=position;
-    slotOwned=slot;
+    public Player(String pId,int pBalance, boolean pStatus, int pPosition){
+    id=pId;
+    balance=pBalance;
+    status=pStatus;
+    position=pPosition;
     }
     
     public String getId() {
@@ -40,7 +39,7 @@ public class Player {
         this.balance = balance;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
