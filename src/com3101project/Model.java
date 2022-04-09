@@ -26,7 +26,7 @@ public class Model {
         slots = new Slot[23];
         load();
         testPrintSlot();
-        editSlot("1","Tsuen Wan","1400","2");
+        editSlot("1","Central","1000","0");
         testPrintSlot();
     }
     //
