@@ -8,24 +8,30 @@ import java.util.*;
  */
 public class Model {
     Controller control;
-    int turn=1;
+    int turn;
     Player[ ] players;
     Slot[] slots;
     public static Scanner scan ;
+    ArrayList<String> activePlayer = new ArrayList<String>();
+    
     
     public void setController(Controller c) {
         this.control = c;
     }
     
     public void newGame(){
+        turn=1;
         players = new Player[5];
         players [1]=new Player("1",2000,false,0);
         players [2]=new Player("2",2000,false,0);
         players [3]=new Player("3",2000,false,0);
         players [4]=new Player("4",2000,false,0);
         slots = new Slot[23];
+        activePlayer.add("1");
+        activePlayer.add("2");
+        activePlayer.add("3");
+        activePlayer.add("4");
         load();
-        testPrintPlayer();
         editOwner("6","4");
         editOwner("5","4");
         editOwner("3","2");
@@ -34,7 +40,8 @@ public class Model {
         editOwner("22","2");
         editOwner("5","1");
         editOwner("14","3");
-        editOwner("5","3");
+        editOwner("5","3");        
+        editplayer("10","3000","bankrupt","1","2500","bankrupt","16","700","active","20","3500","active","2");
         testPrintPlayer();
         //editSlot("1","Central","1000");
         //testPrintSlot();
@@ -71,16 +78,56 @@ public class Model {
         }else{
             players[turn].setPosition(position+moving);
         }
-    
-        if(turn!=4)
-            turn++;
-        else
-            turn=0;
-    
+        
+        nextTurn(turn);
+        
     }
     
     public void updatePlayerBalance(String playerId, int amount){
         players[Integer.parseInt(playerId)].setBalance(amount);
+    }
+    
+    public String checkLandStatus(int slot){
+       String owner= slots[slot].getOwner();
+       return owner;
+    }
+    
+    public void nextTurn(int nTurn){
+        int pos=activePlayer.indexOf(Integer.toString(nTurn));
+        int size=activePlayer.size();
+        
+        if(pos==size-1){
+        turn=Integer. parseInt(activePlayer.get(0));
+        }else{
+        turn=Integer. parseInt(activePlayer.get(pos+1));
+        }
+        
+    }
+    public void bankrupt(String playerId){
+        int id= Integer. parseInt(playerId);
+        players[id].setStatus(false);
+        players[id].clear();
+        activePlayer.remove(playerId);
+        
+    
+    }
+    
+    
+    public void payRentalFee(String playerId, String ownerId, int slotId){
+        int player= Integer. parseInt(playerId);
+        int owner= Integer. parseInt(ownerId);
+        int price=Integer. parseInt(slots[slotId].getPrice());
+        int pBalance=players[player].getBalance();
+        int oBalance=players[owner].getBalance();
+        
+        if(pBalance-(price*0.1)>=0){
+            players[player].setBalance((int) (pBalance-(price*0.1)));
+            players[owner].setBalance((int) (oBalance+(price*0.1)));
+        }else{
+            bankrupt(playerId);
+        }
+        
+        
     }
     
     public void editSlot( String id, String name, String price){
@@ -140,14 +187,49 @@ public class Model {
         }   
     }
     
+    public void editplayer(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, 
+            String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn)
+    {       //update player 1
+            players[1].setPosition(Integer. parseInt(p1Pos));
+            players[1].setBalance(Integer. parseInt(p1Balance));
+            if(p1Status.equals("active"))
+                players[1].setStatus(true);
+            else
+                players[1].setStatus(false);
+            //update player 2
+            players[2].setPosition(Integer. parseInt(p2Pos));
+            players[2].setBalance(Integer. parseInt(p2Balance));
+            if(p2Status.equals("active"))
+                players[2].setStatus(true);
+            else
+                players[2].setStatus(false);
+            //update player 3
+            players[3].setPosition(Integer. parseInt(p3Pos));
+            players[3].setBalance(Integer. parseInt(p3Balance));
+            if(p3Status.equals("active"))
+                players[3].setStatus(true);
+            else
+                players[3].setStatus(false);
+            //update player 4
+            players[4].setPosition(Integer. parseInt(p4Pos));
+            players[4].setBalance(Integer. parseInt(p4Balance));
+            if(p4Status.equals("active"))
+                players[4].setStatus(true);
+            else
+                players[4].setStatus(false);
+            //update turn
+            turn=Integer. parseInt(nTurn);
+    }
+    
     public void testPrintPlayer(){
         for(int i=1;i<=4; i++){
             System.out.println(players[i].getId()+" "+players[i].getBalance()+" "+players[i].getStatus()+" "+players[i].getPosition()+" "+players[i].getSlotOwned().toString());
         }   
     }
+    
     public void testPrintSlot(){ 
         for(int i=0;i<23;i++){
-            System.out.println(slots[i].getId()+" "+slots[i].getName()+" "+slots[i].getPrice()+" owner "+slots[i].getOwner());
+            System.out.println("Slot: "+slots[i].getId()+" Name: "+slots[i].getName()+" Price: $"+slots[i].getPrice()+" Owner "+slots[i].getOwner());
         }
     }
     
