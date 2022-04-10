@@ -24,8 +24,8 @@ public class Controller {
     public void updateSlot(String id, String name, String price){
         model.editSlot(id, name, price);
     }
-    public void updateOwner(String slot, String owner){
-        model.editOwner(slot, owner);
+    public void updateOwner(String id, String owner){
+        model.editOwner(id, owner);
     }
     public void playerUpdate(String p1Pos, String p1Balance, 
             String p1Status, String p2Pos, String p2Balance, 
