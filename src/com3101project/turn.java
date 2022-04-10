@@ -41,6 +41,11 @@ public class turn extends javax.swing.JFrame {
         jLabel1.setText("Who's turn");
 
         tf_turn.setBackground(new java.awt.Color(204, 204, 204));
+        tf_turn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_turnActionPerformed(evt);
+            }
+        });
         tf_turn.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tf_turnKeyTyped(evt);
@@ -127,13 +132,19 @@ public class turn extends javax.swing.JFrame {
 
     private void tf_turnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_turnKeyTyped
         // TODO add your handling code here:
-             char c = evt.getKeyChar();
-        
-        if (!Character.isDigit(c)){
+         char t = evt.getKeyChar();
+         if (!Character.isDigit(t)){
             evt.consume();
         }
         
+        
     }//GEN-LAST:event_tf_turnKeyTyped
+
+    private void tf_turnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_turnActionPerformed
+        // TODO add your handling code here:
+
+       
+    }//GEN-LAST:event_tf_turnActionPerformed
 
     /**
      * @param args the command line arguments
