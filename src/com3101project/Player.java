@@ -14,7 +14,7 @@ public class Player {
     private int balance;
     private boolean status;
     private int position;
-    private ArrayList<String> slotOwned = new ArrayList<>();;
+    private ArrayList<String> slotOwned = new ArrayList<>();
     
     public Player(String pId,int pBalance, boolean pStatus, int pPosition){
     id=pId;
@@ -22,12 +22,17 @@ public class Player {
     status=pStatus;
     position=pPosition;
     }
+    
     public void remove(String slot){
-        slotOwned.removeIf(e -> e.contains(slot));;
+        slotOwned.remove(slot);
     }
     
     public void add(String slot){
         slotOwned.add(slot);
+    }
+    
+    public void clear(){
+        slotOwned.clear();
     }
     
     public String getId() {
