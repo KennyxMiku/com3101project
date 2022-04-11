@@ -23,13 +23,22 @@ public class Player {
     position=pPosition;
     }
     
-    public void remove(String slot){
+    public void removeSlot(String slot){
         slotOwned.remove(slot);
     }
     
-    public void add(String slot){
+    public void addSlot(String slot){
         slotOwned.add(slot);
     }
+    
+    public void add(int money){
+        balance= balance+money;
+    }
+    
+    public void deduct(int money){
+        balance= balance-money;
+    }
+    
     
     public void clear(){
         slotOwned.clear();
