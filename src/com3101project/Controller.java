@@ -38,9 +38,11 @@ public class Controller {
             String p4Status, String nTurn){
             model.editplayer(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
     }
+    
     public void rollDice(){
         model.rollDice();
     }
+    
     public void viewUpdate(String p1Pos, String p1Balance, 
             String p1Status, String p2Pos, String p2Balance, 
             String p2Status, String p3Pos, String p3Balance, 
@@ -49,9 +51,11 @@ public class Controller {
             view.update(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
         
     }
+    
     public void viewShowMessage(String msg){
         view.showMessage(msg);
     }
+    
     public void lookForSlotOwned(){
         model.showSlotOwned();
     }
