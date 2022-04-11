@@ -43,6 +43,7 @@ public class Model {
         editOwner("5","3");        
         editplayer("10","3000","bankrupt","1","2500","bankrupt","16","700","active","20","3500","active","2");
         testPrintPlayer();
+        testPrintSlot();
         //editSlot("1","Central","1000");
         //testPrintSlot();
     }
