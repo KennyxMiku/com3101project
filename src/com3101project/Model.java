@@ -44,7 +44,7 @@ public class Model {
         editOwner("22","1");        
         editplayer("10","300","bankrupt","1","25000","bankrupt","16","7000","active","20","35000","active","2");
         testPrintPlayer();
-        testPrintSlot();
+        System.out.println(showSlotOwned());
         //editSlot("1","Central","1000");
         //testPrintSlot();
     }
@@ -120,8 +120,7 @@ public class Model {
         //send message
         //not finish
     }
-    
-    
+   
     public void payRentalFee(String playerId, String ownerId, int slotId){
         int player= Integer. parseInt(playerId);
         int owner= Integer. parseInt(ownerId);
@@ -138,6 +137,17 @@ public class Model {
         }
         
         //not finish
+    }
+    
+    public String showSlotOwned(){ 
+        String display="";
+        
+        for(int i=0;i<23;i++){
+            String temp=("Slot: "+slots[i].getId()+" Name: "+slots[i].getName()+" Price: $"+slots[i].getPrice()+" Owner "+slots[i].getOwner()+"\n");
+            display += temp;
+        }
+        
+        return display;
     }
     
     public void load(){ 
