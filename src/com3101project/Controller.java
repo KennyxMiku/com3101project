@@ -52,6 +52,9 @@ public class Controller {
     public void viewShowMessage(String msg){
         view.showMessage(msg);
     }
+    public void lookForSlotOwned(){
+        model.showSlotOwned();
+    }
 
 
 }
