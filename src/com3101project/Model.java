@@ -40,14 +40,106 @@ public class Model {
         editOwner("22","2");
         editOwner("5","1");
         editOwner("14","3");
-        editOwner("5","3");        
-        editplayer("10","3000","bankrupt","1","2500","bankrupt","16","700","active","20","3500","active","2");
+        editOwner("5","3");
+        editOwner("22","1");        
+        editplayer("10","300","bankrupt","1","25000","bankrupt","16","7000","active","20","35000","active","2");
         testPrintPlayer();
         testPrintSlot();
         //editSlot("1","Central","1000");
         //testPrintSlot();
     }
     //
+    
+    
+    public void rollDice(){
+        Random rand = new Random();
+        int moving = rand.nextInt((10 - 1) + 1) + 1;
+        int position = players[turn].getPosition();
+    
+        if(position+moving >23){
+            position = position%22;
+            players[turn].setPosition(position);
+        }else{
+            players[turn].setPosition(position+moving);
+        }
+        position = players[turn].getPosition();
+        if (checkLandStatus(position)=="0") {
+            //buyland
+        }else{
+            payRentalFee(Integer.toString(turn),checkLandStatus(position),position);        
+        }       
+        nextTurn(turn);
+        //not finish
+        //function update to controller
+    }
+    
+    public void nextTurn(int nTurn){
+        int pos=activePlayer.indexOf(Integer.toString(nTurn));
+        int size=activePlayer.size();
+        
+        if(pos==size-1){
+            turn=Integer. parseInt(activePlayer.get(0));
+        }else{
+            turn=Integer. parseInt(activePlayer.get(pos+1));
+        } 
+    }
+    
+    public void updatePlayerBalance(String playerId, int amount){
+        players[Integer.parseInt(playerId)].setBalance(amount);
+    }
+    
+    public void updatePlayerPosition(){
+        // need to be done
+    }
+    
+    public void buyLand(String playerId, int slotId){
+        int choice = 0;
+        // ask player buy or not   call view()
+        if(choice == 0 ){
+            int player=Integer.parseInt(playerId);
+            int price=Integer.parseInt(slots[slotId].getPrice());
+            if(players[player].getBalance()-price>=0){
+                players[player].deduct(price);
+                players[player].addSlot(Integer.toString(slotId));
+        }else{
+            //send msg no money
+            }      
+        }     
+    }
+    
+    public String checkLandStatus(int slot){
+       String owner= slots[slot].getOwner();
+       return owner;
+    }
+    
+    public void bankrupt(String playerId){
+        int id= Integer. parseInt(playerId);
+        players[id].setStatus(false);
+        players[id].clear();
+        activePlayer.remove(playerId);
+        //send message
+        //not finish
+    }
+    
+    
+    public void payRentalFee(String playerId, String ownerId, int slotId){
+        int player= Integer. parseInt(playerId);
+        int owner= Integer. parseInt(ownerId);
+        int price=Integer. parseInt(slots[slotId].getPrice());
+        int pBalance=players[player].getBalance();
+        int oBalance=players[owner].getBalance();
+        
+        if(pBalance-(price*0.1)>=0){
+            players[player].deduct((int) (price*0.1));
+            players[owner].add((int) (price*0.1));
+            //send message
+        }else{
+            bankrupt(playerId);
+        }
+        
+        //not finish
+    }
+    
     public void load(){ 
         String line = "";
         String splitBy = ",";
@@ -62,73 +154,10 @@ public class Model {
                 slotNum++;
             }
             br.close();
-    }
-    catch(IOException e) {
-      e.printStackTrace();
-    }
-    }
-    
-    public void rollDice(){
-        Random rand = new Random();
-        int moving = rand.nextInt((10 - 1) + 1) + 1;
-        int position = players[turn].getPosition();
-    
-        if(position+moving >23){
-            position = position%22;
-            players[turn].setPosition(position);
-        }else{
-            players[turn].setPosition(position+moving);
         }
-        
-        nextTurn(turn);
-        
-    }
-    
-    public void updatePlayerBalance(String playerId, int amount){
-        players[Integer.parseInt(playerId)].setBalance(amount);
-    }
-    
-    public String checkLandStatus(int slot){
-       String owner= slots[slot].getOwner();
-       return owner;
-    }
-    
-    public void nextTurn(int nTurn){
-        int pos=activePlayer.indexOf(Integer.toString(nTurn));
-        int size=activePlayer.size();
-        
-        if(pos==size-1){
-        turn=Integer. parseInt(activePlayer.get(0));
-        }else{
-        turn=Integer. parseInt(activePlayer.get(pos+1));
-        }
-        
-    }
-    public void bankrupt(String playerId){
-        int id= Integer. parseInt(playerId);
-        players[id].setStatus(false);
-        players[id].clear();
-        activePlayer.remove(playerId);
-        
-    
-    }
-    
-    
-    public void payRentalFee(String playerId, String ownerId, int slotId){
-        int player= Integer. parseInt(playerId);
-        int owner= Integer. parseInt(ownerId);
-        int price=Integer. parseInt(slots[slotId].getPrice());
-        int pBalance=players[player].getBalance();
-        int oBalance=players[owner].getBalance();
-        
-        if(pBalance-(price*0.1)>=0){
-            players[player].setBalance((int) (pBalance-(price*0.1)));
-            players[owner].setBalance((int) (oBalance+(price*0.1)));
-        }else{
-            bankrupt(playerId);
-        }
-        
-        
+            catch(IOException e) {
+            e.printStackTrace();
+            }
     }
     
     public void editSlot( String id, String name, String price){
@@ -170,8 +199,8 @@ public class Model {
         }catch(Exception e){
             e.printStackTrace();
         }
-        load();
-      
+            load();
+        //send message
     }
     
     public void editOwner(String slot, String owner){
@@ -179,12 +208,13 @@ public class Model {
         int player=Integer. parseInt(owner);
         if(slots[slotNum].getOwner().equals("0")){
             slots[slotNum].setOwner(owner);
-            players[player].add(slot);
+            players[player].addSlot(slot);
         }else{ 
            int playerNum=Integer. parseInt(slots[slotNum].getOwner());
            slots[slotNum].setOwner(owner);
-           players[playerNum].remove(slot);
-           players[player].add(slot);
+           players[playerNum].removeSlot(slot);
+           players[player].addSlot(slot);
+           //send message
         }   
     }
     
@@ -220,6 +250,7 @@ public class Model {
                 players[4].setStatus(false);
             //update turn
             turn=Integer. parseInt(nTurn);
+            //send message
     }
     
     public void testPrintPlayer(){
