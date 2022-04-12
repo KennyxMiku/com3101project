@@ -29,7 +29,7 @@ public class Com3101project {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                view.setVisible(true);
+               view.setVisible(true);
             }
         });
       

@@ -42,9 +42,9 @@ public class Model {
         editOwner("14","3");
         editOwner("5","3");
         editOwner("22","1");        
-        editplayer("10","300","bankrupt","1","25000","bankrupt","16","7000","active","20","35000","active","2");
+        editplayer("10","300","active","1","5000","active","16","3000","bankrupt","20","5000","active","1");       
+        bankrupt("3");
         testPrintPlayer();
-        System.out.println(showSlotOwned());
         //editSlot("1","Central","1000");
         //testPrintSlot();
     }
@@ -54,20 +54,30 @@ public class Model {
     public void rollDice(){
         Random rand = new Random();
         int moving = rand.nextInt((10 - 1) + 1) + 1;
+        System.out.println("you roll "+moving);
         int position = players[turn].getPosition();
-    
-        if(position+moving >23){
-            position = position%22;
+        System.out.println(turn+" orignal "+position);
+        if(position+moving >=23){
+            position = (position+moving)%22-1;
             players[turn].setPosition(position);
+            System.out.println(position);
+            players[turn].add(2000);          
         }else{
             players[turn].setPosition(position+moving);
         }
         position = players[turn].getPosition();
-        if (checkLandStatus(position)=="0") {
-            //buyland
+        System.out.println(turn+" current "+players[turn].getPosition());
+        if (checkLandStatus(position)==Integer.toString(turn)) { 
+            
         }else{
-            payRentalFee(Integer.toString(turn),checkLandStatus(position),position);        
-        }       
+        if (checkLandStatus(position)=="0") {
+                buyLand(Integer.toString(turn),position);
+            //buyland
+            }else{
+                payRentalFee(Integer.toString(turn),checkLandStatus(position),position);        
+            } 
+        }
+           
         nextTurn(turn);
         //not finish
         //function update to controller
@@ -93,15 +103,23 @@ public class Model {
     }
     
     public void buyLand(String playerId, int slotId){
-        int choice = 0;
+        int choice = 1;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("buy? "+slotId+"price "+slots[slotId].getPrice());
+        String buy = scan.next();
+       
         // ask player buy or not   call view()
-        if(choice == 0 ){
+        if(choice == 0 ||buy.equals("yes")){
             int player=Integer.parseInt(playerId);
             int price=Integer.parseInt(slots[slotId].getPrice());
             if(players[player].getBalance()-price>=0){
                 players[player].deduct(price);
                 players[player].addSlot(Integer.toString(slotId));
+                System.out.println("You buy "+slotId);
+                System.out.println(players[player].getId()+" "+players[player].getBalance()+" "+players[player].getStatus()+" "+players[player].getPosition()+" "+players[player].getSlotOwned().toString());
+                
         }else{
+                System.out.println("Not have enough money");
             //send msg no money
             }      
         }     
@@ -117,6 +135,8 @@ public class Model {
         players[id].setStatus(false);
         players[id].clear();
         activePlayer.remove(playerId);
+        System.out.println(playerId+" is bankrupt");
+        System.out.println(players[id].getId()+" "+players[id].getBalance()+" "+players[id].getStatus()+" "+players[id].getPosition()+" "+players[id].getSlotOwned().toString());
         //send message
         //not finish
     }
@@ -127,10 +147,12 @@ public class Model {
         int price=Integer. parseInt(slots[slotId].getPrice());
         int pBalance=players[player].getBalance();
         int oBalance=players[owner].getBalance();
-        
+        System.out.println("This slot"+slotId+" owned by "+ownerId+" need to pay "+price*0.1);
         if(pBalance-(price*0.1)>=0){
             players[player].deduct((int) (price*0.1));
+            System.out.println(players[player].getId()+" "+players[player].getBalance()+" "+players[player].getStatus()+" "+players[player].getPosition()+" "+players[player].getSlotOwned().toString());
             players[owner].add((int) (price*0.1));
+            System.out.println(players[owner].getId()+" "+players[owner].getBalance()+" "+players[owner].getStatus()+" "+players[owner].getPosition()+" "+players[owner].getSlotOwned().toString());
             //send message
         }else{
             bankrupt(playerId);
