@@ -137,6 +137,11 @@ public class Model {
         activePlayer.remove(playerId);
         System.out.println(playerId+" is bankrupt");
         System.out.println(players[id].getId()+" "+players[id].getBalance()+" "+players[id].getStatus()+" "+players[id].getPosition()+" "+players[id].getSlotOwned().toString());
+        if (activePlayer.size()==1) {
+            System.out.println(activePlayer.get(0)+" win !");
+            
+        }
+       
         //send message
         //not finish
     }
