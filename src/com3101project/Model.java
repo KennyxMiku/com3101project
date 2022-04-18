@@ -43,8 +43,9 @@ public class Model {
         editOwner("5","3");
         editOwner("22","1");        
         editplayer("10","300","active","1","5000","active","16","3000","bankrupt","20","5000","active","1");       
-        bankrupt("3");
         testPrintPlayer();
+        bankrupt("3");
+        System.out.println(showSlotOwned());
         //editSlot("1","Central","1000");
         //testPrintSlot();
     }
@@ -67,10 +68,10 @@ public class Model {
         }
         position = players[turn].getPosition();
         System.out.println(turn+" current "+players[turn].getPosition());
-        if (checkLandStatus(position)==Integer.toString(turn)) { 
+        if (checkLandStatus(position).equals(Integer.toString(turn))||position==0) { 
             
         }else{
-        if (checkLandStatus(position)=="0") {
+        if (checkLandStatus(position).equals("0")) {
                 buyLand(Integer.toString(turn),position);
             //buyland
             }else{
@@ -115,6 +116,7 @@ public class Model {
             if(players[player].getBalance()-price>=0){
                 players[player].deduct(price);
                 players[player].addSlot(Integer.toString(slotId));
+                slots[slotId].setOwner(playerId);
                 System.out.println("You buy "+slotId);
                 System.out.println(players[player].getId()+" "+players[player].getBalance()+" "+players[player].getStatus()+" "+players[player].getPosition()+" "+players[player].getSlotOwned().toString());
                 
@@ -132,14 +134,20 @@ public class Model {
     
     public void bankrupt(String playerId){
         int id= Integer. parseInt(playerId);
-        players[id].setStatus(false);
+        players[id].setStatus(false); 
+        for (int i = 0; i < 23; i++) {
+            if(slots[i].getOwner().equals(playerId)){
+                System.out.println(i+" "+slots[i].getOwner());
+                slots[i].setOwner("0");
+                System.out.println(i+" "+slots[i].getOwner());
+            }   
+        }
         players[id].clear();
-        activePlayer.remove(playerId);
+        activePlayer.remove(playerId);       
         System.out.println(playerId+" is bankrupt");
         System.out.println(players[id].getId()+" "+players[id].getBalance()+" "+players[id].getStatus()+" "+players[id].getPosition()+" "+players[id].getSlotOwned().toString());
         if (activePlayer.size()==1) {
-            System.out.println(activePlayer.get(0)+" win !");
-            
+            System.out.println(activePlayer.get(0)+" win !");           
         }
        
         //send message
@@ -170,7 +178,8 @@ public class Model {
         String display="";
         
         for(int i=0;i<23;i++){
-            String temp=("Slot: "+slots[i].getId()+" Name: "+slots[i].getName()+" Price: $"+slots[i].getPrice()+" Owner "+slots[i].getOwner()+"\n");
+            String temp=("Slot: "+String.format("%1$-2s", slots[i].getId())+" Name: "+String.format("%1$-20s", slots[i].getName())+" Price: $"
+                    +String.format("%1$-7s",slots[i].getPrice())+" Owner "+slots[i].getOwner()+"\n");
             display += temp;
         }
         
