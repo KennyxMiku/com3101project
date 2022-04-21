@@ -1,7 +1,7 @@
 id,name,price
 0,start,0
 1,Central,500
-2,Kowloon Bay,600
+2,Kowloon,600
 3,Tsuen Wan,700
 4,Yuen Long,800
 5,ShaTin,900
@@ -21,4 +21,4 @@ id,name,price
 19,Ma On Shan,2500
 20,Lai Chi Kok,2600
 21,Chai Wan,2700
-22,Sai Wan,2800
+22,Sai Wan,3000
