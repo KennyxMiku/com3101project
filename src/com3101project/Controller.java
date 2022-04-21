@@ -25,15 +25,24 @@ public class Controller {
     }
     
     public void updateSlot(String id, String name, String price, String owner){
-        model.editSlot(id, name, price);
-        if(owner.equals("")){
-        }else{
+        if (name.equals("")&&price.equals("")) {
             if (owner.equals("1")||owner.equals("2")||owner.equals("3")||owner.equals("4")||owner.equals("0")){
                 model.editOwner(id, owner);
                 }else{
-                viewShowMessage("invalid owner (0-4, 0 equal to no one own the land.)");
+                viewShowMessage("Invalid owner (should between 0-4, 0 equal to no one own the land.)");
             }
-        }  
+        }else{
+            if(owner.equals("")){
+                model.editSlot(id, name, price);
+            }else{
+                model.editSlot(id, name, price);
+                if (owner.equals("1")||owner.equals("2")||owner.equals("3")||owner.equals("4")||owner.equals("0")){
+                model.editOwner(id, owner);
+                }else{
+                viewShowMessage("Invalid owner (should between 0-4, 0 equal to no one own the land.)");
+            }
+            } 
+        }
     }
     
     public void playerUpdate(String p1Pos, String p1Balance, 
@@ -66,8 +75,13 @@ public class Controller {
         view.showMessage(slot);
     }
 
-    public boolean buy(int slotId, String price){
-        boolean choice=view.buy(slotId, price);
+    public boolean buy(int slotId, String price, String name){
+        boolean choice=view.buy(slotId, price, name);
         return choice;  
     }
+    
+    public void trade(String buyer, String seller, String slotId, String price){
+        model.trade(buyer,seller,slotId,price);
+    }
+    
 }

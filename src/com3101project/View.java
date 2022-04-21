@@ -61,6 +61,8 @@ public class View extends javax.swing.JFrame {
         bt_owner = new javax.swing.JButton();
         bt_roll = new javax.swing.JButton();
         tf_turn = new javax.swing.JTextField();
+        buy_btn = new javax.swing.JButton();
+        sell_btn = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -103,6 +105,7 @@ public class View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel5.setBackground(new java.awt.Color(204, 231, 230));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
@@ -206,33 +209,35 @@ public class View extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_sid, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_st_name)
-                            .addComponent(tf_price)))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(bt_saveplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(bt_saveslot, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tf_sid, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
+                                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(21, 21, 21)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(tf_stowner)
+                                            .addComponent(tf_st_name)
+                                            .addComponent(tf_price))))
+                                .addGap(16, 16, 16))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tf_stowner))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(bt_saveplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_saveslot, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(bt_em, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(99, 99, 99)
+                        .addComponent(bt_em, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -254,7 +259,7 @@ public class View extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_stowner, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(bt_em, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,14 +268,15 @@ public class View extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 259, -1, 358));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 370, 360));
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel18.setText("Who's turn");
 
-        bt_owner.setBackground(new java.awt.Color(204, 255, 204));
+        bt_owner.setBackground(new java.awt.Color(204, 255, 255));
         bt_owner.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
         bt_owner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/lands.png"))); // NOI18N
         bt_owner.setText("show slot owner");
@@ -280,7 +286,7 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        bt_roll.setBackground(new java.awt.Color(204, 255, 204));
+        bt_roll.setBackground(new java.awt.Color(204, 255, 255));
         bt_roll.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
         bt_roll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/dices.png"))); // NOI18N
         bt_roll.setText("Roll Dice");
@@ -303,40 +309,70 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        buy_btn.setBackground(new java.awt.Color(255, 255, 51));
+        buy_btn.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        buy_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/buy-button.png"))); // NOI18N
+        buy_btn.setText("Buy");
+        buy_btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 153), new java.awt.Color(255, 255, 153), new java.awt.Color(255, 255, 153), new java.awt.Color(255, 255, 153)));
+        buy_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buy_btnActionPerformed(evt);
+            }
+        });
+
+        sell_btn.setBackground(new java.awt.Color(255, 255, 0));
+        sell_btn.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        sell_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/selling.png"))); // NOI18N
+        sell_btn.setText("Sell");
+        sell_btn.setBorder(null);
+        sell_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sell_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel18)
-                        .addGap(49, 49, 49)
-                        .addComponent(tf_turn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel18)
+                            .addComponent(bt_owner))
+                        .addGap(37, 37, 37))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 100, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(bt_roll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(bt_owner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(44, 44, 44)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addComponent(bt_roll, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tf_turn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(buy_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                        .addComponent(sell_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(70, 70, 70))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
                     .addComponent(tf_turn))
-                .addGap(22, 22, 22)
-                .addComponent(bt_owner, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bt_roll)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bt_owner)
+                    .addComponent(buy_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 24, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_roll)
+                    .addComponent(sell_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 25, -1, -1));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 25, 380, -1));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1135,16 +1171,57 @@ public class View extends javax.swing.JFrame {
     private void rb_Bankrupt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rb_Bankrupt2ActionPerformed
+
+    private void sell_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_btnActionPerformed
+        // TODO add your handling code here:
+         String seller=tf_turn.getText();
+        String buyer = JOptionPane.showInputDialog(null, "Buyer? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+        if (buyer.equals("1")||buyer.equals("2")||buyer.equals("3")||buyer.equals("4")) {
+            String slot = JOptionPane.showInputDialog(null, "Slot Id? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+             if (Integer.parseInt(slot)>0&&Integer.parseInt(slot)<23) {
+                String price = JOptionPane.showInputDialog(null, "Price? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+                 if (Integer.parseInt(price)>0) {
+                     controller.trade(buyer, seller, slot, price);
+                 }else{
+                    showMessage("Price should be larger than or equal to 0! ");
+                 }     
+            }else{
+              showMessage("Land slot id invalid (should between 1-22 )! ");
+             }
+        }else{
+            showMessage("Buyer id invalid (should between 1-4 )! ");
+        }
+    }//GEN-LAST:event_sell_btnActionPerformed
+
+    private void buy_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_btnActionPerformed
+        // TODO add your handling code here:
+         String buyer=tf_turn.getText();
+        String seller = JOptionPane.showInputDialog(null, "Seller? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
+        if (seller.equals("1")||seller.equals("2")||seller.equals("3")||seller.equals("4")) {
+            String slot = JOptionPane.showInputDialog(null, "Slot Id? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
+             if (Integer.parseInt(slot)>0&&Integer.parseInt(slot)<23) {
+                String price = JOptionPane.showInputDialog(null, "Price? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
+                 if (Integer.parseInt(price)>0) {
+                     controller.trade(buyer, seller, slot, price);
+                 }else{
+                    showMessage("Price should be larger than or equal to 0! ");
+                 }     
+            }else{
+              showMessage("Land slot id invalid (should between 1-22 )! ");
+             }
+        }else{
+            showMessage("Buyer id invalid (should between 1-4 )! ");
+        }
+    }//GEN-LAST:event_buy_btnActionPerformed
     public void showMessage(String s) {
         JOptionPane.showMessageDialog(this, s);
     }
-    public boolean buy(int slotId, String price) {    
+    public boolean buy(int slotId, String price, String name) {    
         String[] options={" Yes","NO"};
-          int x = JOptionPane.showOptionDialog(null,"buy? "+slotId +"price "+price ,
-                "This slot does not have an owner yet!",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
-          System.out.println(x);     
-          if(x == 0){
+          int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"+"Would you like to buy this land? \n\n"+
+                  "Id: "+slotId +" Slot name: "+name+ " price: $"+price ,"Buy land slot",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+          if(choice == 0){
           return true;}
           else{
           return false;}
@@ -1164,6 +1241,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JButton buy_btn;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1201,6 +1279,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JRadioButton rb_active2;
     private javax.swing.JRadioButton rb_active3;
     private javax.swing.JRadioButton rb_active4;
+    private javax.swing.JButton sell_btn;
     private javax.swing.JTextField tf_balance1;
     private javax.swing.JTextField tf_balance2;
     private javax.swing.JTextField tf_balance3;
