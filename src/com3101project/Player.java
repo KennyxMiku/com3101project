@@ -22,23 +22,37 @@ public class Player {
     status=pStatus;
     position=pPosition;
     }
-    
+    /**
+     * remove slot from the slot array
+     * @param slot 
+     */
     public void removeSlot(String slot){
         slotOwned.remove(slot);
     }
-    
+    /**
+     * add slot to the slot array
+     * @param slot 
+     */
     public void addSlot(String slot){
         slotOwned.add(slot);
     }
-    
+    /**
+     * increacse player balance
+     * @param money money need to add
+     */
     public void add(int money){
         balance= balance+money;
     }
-    
+    /**
+     * deduct player balance
+     * @param money money need to deuctt
+     */
     public void deduct(int money){
         balance= balance-money;
     }
-    
+    /**
+     * clear the slot array
+     */
     public void clear(){
         slotOwned.clear();
     }

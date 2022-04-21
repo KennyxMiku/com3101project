@@ -482,36 +482,32 @@ public class Model {
             control.viewShowMessage("Player edit is done!");
             //send message
     }
-   
+   /**
+    * trade slot between 2 players
+    * @param buyer buyer id
+    * @param seller seller id 
+    * @param slotId slot id that waiting to trade
+    * @param price trading price
+    */
    public void trade(String buyer, String seller, String slotId, String price){
        int buy=Integer.parseInt(buyer);
        int sell=Integer.parseInt(seller);
        int slot=Integer.parseInt(slotId);
        int tradePrice=Integer.parseInt(price);
        if(players[buy].getBalance()-tradePrice>=0){
-           players[buy].deduct(tradePrice);
-           players[sell].add(tradePrice);
-           slots[slot].setOwner(buyer);
-           players[sell].removeSlot(slotId);
-           players[buy].addSlot(slotId);
-           updatePlayerPosition(); 
-           control.viewShowMessage("Trading success! Land slot "+ slotId+" now own by player"+buyer);
+           if(checkLandStatus(slot).equals(sell)){
+                players[buy].deduct(tradePrice);
+                players[sell].add(tradePrice);
+                slots[slot].setOwner(buyer);
+                players[sell].removeSlot(slotId);
+                players[buy].addSlot(slotId);
+                updatePlayerPosition(); 
+                control.viewShowMessage("Trading success! Land slot "+ slotId+" now own by player"+buyer);
+           }else{
+                control.viewShowMessage("Seller haven't own this land slot!");
+           }
        }else{
            control.viewShowMessage("Buyer "+ buyer+" not have enough money!");
        }
    }
-   
-/*    public void testPrintPlayer(){
-        for(int i=1;i<=4; i++){
-            System.out.println(players[i].getId()+" "+players[i].getBalance()+" "+players[i].getStatus()+" "+players[i].getPosition()+" "+players[i].getSlotOwned().toString());
-        }   
-    }
-    
-    public void testPrintSlot(){ 
-        for(int i=0;i<23;i++){
-            System.out.println("Slot: "+slots[i].getId()+" Name: "+slots[i].getName()+" Price: $"+slots[i].getPrice()+" Owner "+slots[i].getOwner());
-        }
-    }
-    
-   */
 }

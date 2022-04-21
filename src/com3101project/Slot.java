@@ -21,8 +21,6 @@ public class Slot {
     this.price=price;
     }
     
-
-    
     public String getOwner() {
         return owner;
     }
