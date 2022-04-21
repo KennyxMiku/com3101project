@@ -18,7 +18,7 @@ public class View extends javax.swing.JFrame {
         this.controller = c;
     }
     private Model model;
-    
+
     public void setModel(Model m) {
         this.model = m;        
     }
@@ -38,6 +38,12 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 32767));
+        jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -54,69 +60,97 @@ public class View extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         bt_owner = new javax.swing.JButton();
         bt_roll = new javax.swing.JButton();
-        tf_position9 = new javax.swing.JTextField();
+        tf_turn = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         tf_position4 = new javax.swing.JTextField();
-        tf_balance2 = new javax.swing.JTextField();
-        tf_active3 = new javax.swing.JRadioButton();
-        rb_Bankrupt3 = new javax.swing.JRadioButton();
+        tf_balance4 = new javax.swing.JTextField();
+        rb_active4 = new javax.swing.JRadioButton();
+        rb_Bankrupt4 = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         tf_position3 = new javax.swing.JTextField();
-        tf_balance1 = new javax.swing.JTextField();
-        tf_active2 = new javax.swing.JRadioButton();
-        rb_Bankrupt2 = new javax.swing.JRadioButton();
+        tf_balance3 = new javax.swing.JTextField();
+        rb_active3 = new javax.swing.JRadioButton();
+        rb_Bankrupt3 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        tf_position1 = new javax.swing.JTextField();
         tf_position2 = new javax.swing.JTextField();
+        tf_balance2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        tf_active1 = new javax.swing.JRadioButton();
-        rb_Bankrupt1 = new javax.swing.JRadioButton();
+        rb_active2 = new javax.swing.JRadioButton();
+        rb_Bankrupt2 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        tf_position = new javax.swing.JTextField();
-        tf_balance = new javax.swing.JTextField();
-        tf_active = new javax.swing.JRadioButton();
-        rb_Bankrupt = new javax.swing.JRadioButton();
+        tf_position1 = new javax.swing.JTextField();
+        tf_balance1 = new javax.swing.JTextField();
+        rb_active1 = new javax.swing.JRadioButton();
+        rb_Bankrupt1 = new javax.swing.JRadioButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         jLabel19.setText("slot id");
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         jLabel20.setText("slot name");
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         jLabel21.setText("slot price");
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         jLabel22.setText("slot owner");
 
         bt_saveplayer.setBackground(new java.awt.Color(255, 102, 102));
-        bt_saveplayer.setText("save player change    ");
+        bt_saveplayer.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 13)); // NOI18N
+        bt_saveplayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/save.png"))); // NOI18N
+        bt_saveplayer.setText("player change");
+        bt_saveplayer.setEnabled(false);
+        bt_saveplayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_saveplayerActionPerformed(evt);
+            }
+        });
 
         bt_saveslot.setBackground(new java.awt.Color(255, 102, 102));
-        bt_saveslot.setText("save slot change");
+        bt_saveslot.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 16)); // NOI18N
+        bt_saveslot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/save.png"))); // NOI18N
+        bt_saveslot.setText("slot change");
+        bt_saveslot.setEnabled(false);
+        bt_saveslot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_saveslotActionPerformed(evt);
+            }
+        });
 
         bt_em.setBackground(new java.awt.Color(255, 102, 102));
+        bt_em.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 16)); // NOI18N
+        bt_em.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/development.png"))); // NOI18N
         bt_em.setText("editor mode");
+        bt_em.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_emActionPerformed(evt);
+            }
+        });
 
+        tf_st_name.setEditable(false);
+        tf_st_name.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
         tf_st_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_st_nameActionPerformed(evt);
@@ -128,6 +162,8 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        tf_price.setEditable(false);
+        tf_price.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
         tf_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_priceActionPerformed(evt);
@@ -139,6 +175,8 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        tf_stowner.setEditable(false);
+        tf_stowner.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
         tf_stowner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_stownerActionPerformed(evt);
@@ -150,6 +188,8 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        tf_sid.setEditable(false);
+        tf_sid.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 14)); // NOI18N
         tf_sid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_sidActionPerformed(evt);
@@ -169,26 +209,26 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(bt_saveplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bt_saveslot, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addGap(3, 3, 3)
-                        .addComponent(tf_stowner, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_sid, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tf_sid, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_st_name, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
-                            .addComponent(tf_price, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))))
+                            .addComponent(tf_st_name)
+                            .addComponent(tf_price)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_stowner))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(bt_saveplayer, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_saveslot, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(99, 99, 99)
@@ -210,11 +250,11 @@ public class View extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_price, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_stowner, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                    .addComponent(tf_stowner, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(bt_em, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -223,12 +263,16 @@ public class View extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 259, -1, 358));
+
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel18.setText("Whos turn");
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel18.setText("Who's turn");
 
-        bt_owner.setBackground(new java.awt.Color(255, 102, 102));
+        bt_owner.setBackground(new java.awt.Color(204, 255, 204));
+        bt_owner.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        bt_owner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/lands.png"))); // NOI18N
         bt_owner.setText("show slot owner");
         bt_owner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -236,17 +280,26 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        bt_roll.setBackground(new java.awt.Color(255, 102, 102));
+        bt_roll.setBackground(new java.awt.Color(204, 255, 204));
+        bt_roll.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        bt_roll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/dices.png"))); // NOI18N
         bt_roll.setText("Roll Dice");
-
-        tf_position9.addActionListener(new java.awt.event.ActionListener() {
+        bt_roll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_position9ActionPerformed(evt);
+                bt_rollActionPerformed(evt);
             }
         });
-        tf_position9.addKeyListener(new java.awt.event.KeyAdapter() {
+
+        tf_turn.setEditable(false);
+        tf_turn.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 18)); // NOI18N
+        tf_turn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_turnActionPerformed(evt);
+            }
+        });
+        tf_turn.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_position9KeyTyped(evt);
+                tf_turnKeyTyped(evt);
             }
         });
 
@@ -255,46 +308,57 @@ public class View extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_position9, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(bt_owner, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
-                        .addComponent(bt_roll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addComponent(tf_turn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 100, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(bt_roll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bt_owner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_position9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addGap(18, 18, 18)
-                .addComponent(bt_owner, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(bt_roll, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tf_turn))
+                .addGap(22, 22, 22)
+                .addComponent(bt_owner, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(bt_roll)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(153, 102, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(836, 25, -1, -1));
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel14.setText("Player1");
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/gamer.png"))); // NOI18N
+        jLabel14.setText("Player4");
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("position");
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/money.png"))); // NOI18N
+        jLabel15.setText("balance");
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("balance");
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/location.png"))); // NOI18N
+        jLabel16.setText("position");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/approve.png"))); // NOI18N
         jLabel17.setText("status");
 
+        tf_position4.setEditable(false);
+        tf_position4.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
         tf_position4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_position4ActionPerformed(evt);
@@ -306,90 +370,112 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        tf_balance2.addActionListener(new java.awt.event.ActionListener() {
+        tf_balance4.setEditable(false);
+        tf_balance4.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
+        tf_balance4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_balance2ActionPerformed(evt);
+                tf_balance4ActionPerformed(evt);
             }
         });
-        tf_balance2.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_balance4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_balance2KeyTyped(evt);
+                tf_balance4KeyTyped(evt);
             }
         });
 
-        tf_active3.setText("Active");
-        tf_active3.addActionListener(new java.awt.event.ActionListener() {
+        rb_active4.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup4.add(rb_active4);
+        rb_active4.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_active4.setText("Active");
+        rb_active4.setEnabled(false);
+        rb_active4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_active3ActionPerformed(evt);
+                rb_active4ActionPerformed(evt);
             }
         });
 
-        rb_Bankrupt3.setText("Bankrupt");
+        rb_Bankrupt4.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup4.add(rb_Bankrupt4);
+        rb_Bankrupt4.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_Bankrupt4.setText("Bankrupt");
+        rb_Bankrupt4.setEnabled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_position4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_balance2)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(rb_Bankrupt3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tf_active3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42)))))
-                .addContainerGap())
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(rb_active4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_Bankrupt4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(tf_balance4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_position4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(23, 23, 23))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addComponent(jLabel14)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(14, 14, 14)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_position4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_balance2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_balance4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rb_Bankrupt3)
-                    .addComponent(tf_active3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rb_Bankrupt4)
+                    .addComponent(rb_active4))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(153, 102, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 337, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel10.setText("Player1");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/gamer.png"))); // NOI18N
+        jLabel10.setText("Player3");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/location.png"))); // NOI18N
         jLabel11.setText("position");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/money.png"))); // NOI18N
         jLabel12.setText("balance");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/approve.png"))); // NOI18N
         jLabel13.setText("status");
 
+        tf_position3.setEditable(false);
+        tf_position3.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
         tf_position3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_position3ActionPerformed(evt);
@@ -401,105 +487,106 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        tf_balance1.addActionListener(new java.awt.event.ActionListener() {
+        tf_balance3.setEditable(false);
+        tf_balance3.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
+        tf_balance3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_balance1ActionPerformed(evt);
+                tf_balance3ActionPerformed(evt);
             }
         });
-        tf_balance1.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_balance3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_balance1KeyTyped(evt);
+                tf_balance3KeyTyped(evt);
             }
         });
 
-        tf_active2.setText("Active");
-        tf_active2.addActionListener(new java.awt.event.ActionListener() {
+        rb_active3.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup3.add(rb_active3);
+        rb_active3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_active3.setText("Active");
+        rb_active3.setEnabled(false);
+        rb_active3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_active2ActionPerformed(evt);
+                rb_active3ActionPerformed(evt);
             }
         });
 
-        rb_Bankrupt2.setText("Bankrupt");
+        rb_Bankrupt3.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup3.add(rb_Bankrupt3);
+        rb_Bankrupt3.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_Bankrupt3.setSelected(true);
+        rb_Bankrupt3.setText("Bankrupt");
+        rb_Bankrupt3.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(15, 15, 15))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(tf_position3)
-                                .addGap(15, 15, 15))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(tf_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(tf_active2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rb_Bankrupt2)
-                                .addGap(33, 33, 33))))))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(rb_active3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_Bankrupt3))
+                    .addComponent(tf_position3)
+                    .addComponent(tf_balance3, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(18, 18, 18)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_position3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(tf_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(rb_Bankrupt2))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tf_active2))))))
-                .addGap(47, 47, 47))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_balance3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rb_active3)
+                    .addComponent(rb_Bankrupt3))
+                .addGap(34, 34, 34))
         );
 
-        jPanel2.setBackground(new java.awt.Color(153, 102, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 337, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setAutoscrolls(true);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel5.setText("Player1");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/gamer.png"))); // NOI18N
+        jLabel5.setText("Player2");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/location.png"))); // NOI18N
         jLabel6.setText("position");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/money.png"))); // NOI18N
         jLabel8.setText("balance");
 
-        tf_position1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_position1ActionPerformed(evt);
-            }
-        });
-        tf_position1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_position1KeyTyped(evt);
-            }
-        });
-
+        tf_position2.setEditable(false);
+        tf_position2.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
         tf_position2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_position2ActionPerformed(evt);
@@ -511,17 +598,44 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("status");
-
-        tf_active1.setText("Active");
-        tf_active1.addActionListener(new java.awt.event.ActionListener() {
+        tf_balance2.setEditable(false);
+        tf_balance2.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
+        tf_balance2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_active1ActionPerformed(evt);
+                tf_balance2ActionPerformed(evt);
+            }
+        });
+        tf_balance2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tf_balance2KeyTyped(evt);
             }
         });
 
-        rb_Bankrupt1.setText("Bankrupt");
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/approve.png"))); // NOI18N
+        jLabel9.setText("status");
+
+        rb_active2.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup2.add(rb_active2);
+        rb_active2.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_active2.setText("Active");
+        rb_active2.setEnabled(false);
+        rb_active2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_active2ActionPerformed(evt);
+            }
+        });
+
+        rb_Bankrupt2.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup2.add(rb_Bankrupt2);
+        rb_Bankrupt2.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_Bankrupt2.setText("Bankrupt");
+        rb_Bankrupt2.setEnabled(false);
+        rb_Bankrupt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_Bankrupt2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -530,173 +644,163 @@ public class View extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_position1)
-                            .addComponent(tf_position2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(tf_active1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(rb_Bankrupt1)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap())
+                        .addComponent(rb_active2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(rb_Bankrupt2))
+                    .addComponent(tf_balance2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tf_position2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(jLabel5)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jLabel5)
-                .addGap(44, 44, 44)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_position1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_position2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_position2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_balance2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_active1)
-                    .addComponent(rb_Bankrupt1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(rb_Bankrupt2)
+                    .addComponent(rb_active2)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(153, 102, 255));
-        jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 25, 380, 270));
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/gamer.png"))); // NOI18N
         jLabel1.setText("Player1");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/location.png"))); // NOI18N
         jLabel2.setText("position");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/money.png"))); // NOI18N
         jLabel3.setText("balance");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com3101project/approve.png"))); // NOI18N
         jLabel4.setText("status");
 
-        tf_position.addActionListener(new java.awt.event.ActionListener() {
+        tf_position1.setEditable(false);
+        tf_position1.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
+        tf_position1.setToolTipText("ddd");
+        tf_position1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_positionActionPerformed(evt);
+                tf_position1ActionPerformed(evt);
             }
         });
-        tf_position.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_position1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_positionKeyTyped(evt);
+                tf_position1KeyTyped(evt);
             }
         });
 
-        tf_balance.addActionListener(new java.awt.event.ActionListener() {
+        tf_balance1.setEditable(false);
+        tf_balance1.setFont(new java.awt.Font("Microsoft JhengHei UI", 3, 14)); // NOI18N
+        tf_balance1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_balanceActionPerformed(evt);
+                tf_balance1ActionPerformed(evt);
             }
         });
-        tf_balance.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_balance1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tf_balanceKeyTyped(evt);
+                tf_balance1KeyTyped(evt);
             }
         });
 
-        tf_active.setText("Active");
-        tf_active.addActionListener(new java.awt.event.ActionListener() {
+        rb_active1.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup1.add(rb_active1);
+        rb_active1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_active1.setText("Active");
+        rb_active1.setEnabled(false);
+        rb_active1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_activeActionPerformed(evt);
+                rb_active1ActionPerformed(evt);
             }
         });
 
-        rb_Bankrupt.setText("Bankrupt");
+        rb_Bankrupt1.setBackground(new java.awt.Color(204, 204, 255));
+        buttonGroup1.add(rb_Bankrupt1);
+        rb_Bankrupt1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 14)); // NOI18N
+        rb_Bankrupt1.setText("Bankrupt");
+        rb_Bankrupt1.setEnabled(false);
+        rb_Bankrupt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rb_Bankrupt1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tf_position)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(tf_active, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rb_active1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rb_Bankrupt))
-                            .addComponent(tf_balance, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                                .addComponent(rb_Bankrupt1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tf_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tf_position1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel1)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_position, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_position1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_balance, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                    .addComponent(tf_balance1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_active)
-                    .addComponent(rb_Bankrupt))
-                .addGap(67, 67, 67))
+                    .addComponent(rb_active1)
+                    .addComponent(rb_Bankrupt1)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(85, 85, 85))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 25, -1, 273));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -715,6 +819,11 @@ public class View extends javax.swing.JFrame {
 
     private void tf_priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_priceKeyTyped
         // TODO add your handling code here:
+         char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
     }//GEN-LAST:event_tf_priceKeyTyped
 
     private void tf_stownerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_stownerActionPerformed
@@ -731,19 +840,25 @@ public class View extends javax.swing.JFrame {
 
     private void tf_sidKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_sidKeyTyped
         // TODO add your handling code here:
+         char c = evt.getKeyChar();
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
     }//GEN-LAST:event_tf_sidKeyTyped
 
     private void bt_ownerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_ownerActionPerformed
         // TODO add your handling code here:
+        controller.lookForSlotOwned();
     }//GEN-LAST:event_bt_ownerActionPerformed
 
-    private void tf_position9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position9ActionPerformed
+    private void tf_turnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_turnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_position9ActionPerformed
+         String turn = tf_turn.getText();
+    }//GEN-LAST:event_tf_turnActionPerformed
 
-    private void tf_position9KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position9KeyTyped
+    private void tf_turnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_turnKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_position9KeyTyped
+    }//GEN-LAST:event_tf_turnKeyTyped
 
     private void tf_position4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position4ActionPerformed
         // TODO add your handling code here:
@@ -751,47 +866,58 @@ public class View extends javax.swing.JFrame {
 
     private void tf_position4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position4KeyTyped
         // TODO add your handling code here:
+         char c = evt.getKeyChar();
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
     }//GEN-LAST:event_tf_position4KeyTyped
 
-    private void tf_balance2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance2ActionPerformed
+    private void tf_balance4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_balance2ActionPerformed
+    }//GEN-LAST:event_tf_balance4ActionPerformed
 
-    private void tf_balance2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance2KeyTyped
+    private void tf_balance4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance4KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_balance2KeyTyped
+         char c = evt.getKeyChar();
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_balance4KeyTyped
 
-    private void tf_active3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_active3ActionPerformed
+    private void rb_active4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_active4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_active3ActionPerformed
+    }//GEN-LAST:event_rb_active4ActionPerformed
 
     private void tf_position3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position3ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_tf_position3ActionPerformed
 
     private void tf_position3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position3KeyTyped
         // TODO add your handling code here:
+         char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
     }//GEN-LAST:event_tf_position3KeyTyped
 
-    private void tf_balance1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance1ActionPerformed
+    private void tf_balance3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_balance1ActionPerformed
+    }//GEN-LAST:event_tf_balance3ActionPerformed
 
-    private void tf_balance1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance1KeyTyped
+    private void tf_balance3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance3KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_balance1KeyTyped
+         char c = evt.getKeyChar();
 
-    private void tf_active2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_active2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_active2ActionPerformed
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
+    }//GEN-LAST:event_tf_balance3KeyTyped
 
-    private void tf_position1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position1ActionPerformed
+    private void rb_active3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_active3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_position1ActionPerformed
-
-    private void tf_position1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position1KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_position1KeyTyped
+    }//GEN-LAST:event_rb_active3ActionPerformed
 
     private void tf_position2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position2ActionPerformed
         // TODO add your handling code here:
@@ -799,18 +925,37 @@ public class View extends javax.swing.JFrame {
 
     private void tf_position2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position2KeyTyped
         // TODO add your handling code here:
+         char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
     }//GEN-LAST:event_tf_position2KeyTyped
 
-    private void tf_active1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_active1ActionPerformed
+    private void tf_balance2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_active1ActionPerformed
+    }//GEN-LAST:event_tf_balance2ActionPerformed
 
-    private void tf_positionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_positionActionPerformed
+    private void tf_balance2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance2KeyTyped
+        // TODO add your handling code here:
+         char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)){
+            evt.consume();
+        }
+
+    }//GEN-LAST:event_tf_balance2KeyTyped
+
+    private void rb_active2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_active2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_active2ActionPerformed
+
+    private void tf_position1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_position1ActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_tf_positionActionPerformed
+    }//GEN-LAST:event_tf_position1ActionPerformed
 
-    private void tf_positionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_positionKeyTyped
+    private void tf_position1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_position1KeyTyped
         // TODO add your handling code here:
         char c = evt.getKeyChar();
 
@@ -818,65 +963,196 @@ public class View extends javax.swing.JFrame {
             evt.consume();
         }
 
-    }//GEN-LAST:event_tf_positionKeyTyped
+    }//GEN-LAST:event_tf_position1KeyTyped
 
-    private void tf_balanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balanceActionPerformed
+    private void tf_balance1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_balance1ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_tf_balance1ActionPerformed
 
-    }//GEN-LAST:event_tf_balanceActionPerformed
-
-    private void tf_balanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balanceKeyTyped
+    private void tf_balance1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_balance1KeyTyped
         // TODO add your handling code here:
         char t = evt.getKeyChar();
         if (!Character.isDigit(t)){
             evt.consume();
         }
+    }//GEN-LAST:event_tf_balance1KeyTyped
 
-    }//GEN-LAST:event_tf_balanceKeyTyped
-
-    private void tf_activeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_activeActionPerformed
+    private void rb_active1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_active1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_activeActionPerformed
+    }//GEN-LAST:event_rb_active1ActionPerformed
 
+    private void bt_rollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_rollActionPerformed
+        // TODO add your handling code here:
+        controller.rollDice();
+    }//GEN-LAST:event_bt_rollActionPerformed
+
+    private void bt_emActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_emActionPerformed
+        // TODO add your handling code here:
+          if (tf_position1.isEditable()){
+              
+                tf_position1.setEditable(false);
+                tf_balance1.setEditable(false);
+                rb_active1.setEnabled(false);
+                rb_Bankrupt1.setEnabled(false);
+                tf_position2.setEditable(false);
+                tf_balance2.setEditable(false);
+                rb_active2.setEnabled(false);
+                rb_Bankrupt2.setEnabled(false);
+                tf_position3.setEditable(false);
+                tf_balance3.setEditable(false);
+                rb_active3.setEnabled(false);
+                rb_Bankrupt3.setEnabled(false);
+                tf_position4.setEditable(false);
+                tf_balance4.setEditable(false);
+                rb_active4.setEnabled(false);
+                rb_Bankrupt4.setEnabled(false);
+                tf_price.setEditable(false);
+                tf_sid.setEditable(false);
+                tf_st_name.setEditable(false);
+                tf_stowner.setEditable(false);
+                tf_turn.setEditable(false);
+                bt_saveplayer.setEnabled(false);
+                bt_saveslot.setEnabled(false);
+          }else{
+                tf_position1.setEditable(true);
+                tf_balance1.setEditable(true);
+                rb_active1.setEnabled(true);
+                rb_Bankrupt1.setEnabled(true);    
+                tf_position2.setEditable(true);
+                tf_balance2.setEditable(true);
+                rb_active2.setEnabled(true);
+                rb_Bankrupt2.setEnabled(true);
+                tf_position3.setEditable(true);
+                tf_balance3.setEditable(true);
+                rb_active3.setEnabled(true);
+                rb_Bankrupt3.setEnabled(true);               
+                tf_position4.setEditable(true);
+                tf_balance4.setEditable(true);
+                rb_active4.setEnabled(true);
+                rb_Bankrupt4.setEnabled(true);
+                tf_price.setEditable(true);
+                tf_sid.setEditable(true);
+                tf_st_name.setEditable(true);
+                tf_stowner.setEditable(true);
+                tf_turn.setEditable(true);
+                bt_saveplayer.setEnabled(true);
+                bt_saveslot.setEnabled(true);
+          }
+//// 
+
+    }//GEN-LAST:event_bt_emActionPerformed
+
+    private void bt_saveplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_saveplayerActionPerformed
+        // TODO add your handling code here:
+         String turn = tf_turn.getText();
+        
+         String p1Pos = tf_position1.getText();
+         String p1Balance = tf_balance1.getText();
+         
+         rb_Bankrupt1.setActionCommand("Bankrupt");
+         rb_Bankrupt2.setActionCommand("Bankrupt");
+         rb_Bankrupt3.setActionCommand("Bankrupt");
+         rb_Bankrupt4.setActionCommand("Bankrupt");
+
+        rb_active1.setActionCommand("Active");
+        rb_active2.setActionCommand("Active");
+        rb_active3.setActionCommand("Active");
+        rb_active4.setActionCommand("Active");
+        
+       String p1Status = buttonGroup1.getSelection().getActionCommand();
+       String p2Status = buttonGroup2.getSelection().getActionCommand();
+       String p3Status = buttonGroup3.getSelection().getActionCommand();
+       String p4Status = buttonGroup4.getSelection().getActionCommand();
+              
+         String p2Pos = tf_position2.getText();
+        String p2Balance = tf_balance2.getText();
+       
+          String p3Pos = tf_position3.getText();
+        String p3Balance = tf_balance3.getText();
+        
+          String p4Pos = tf_position4.getText();
+        String p4Balance = tf_balance4.getText();
+        if (Integer.parseInt(p1Pos)<0||Integer.parseInt(p1Pos)>23) {
+            showMessage("Player 1 postiton invaild (between 0-22) ");
+        }else{
+            if (Integer.parseInt(p2Pos)<0||Integer.parseInt(p2Pos)>23) {
+                showMessage("Player 2 postiton invaild (between 0-22) ");
+            }else{
+                if (Integer.parseInt(p3Pos)<0||Integer.parseInt(p3Pos)>23) {
+                    showMessage("Player 3 postiton invaild (between 0-22) ");
+                }
+                else{
+                    if (Integer.parseInt(p4Pos)<0||Integer.parseInt(p4Pos)>23) {
+                        showMessage("Player 4 postiton invaild (between 0-22) ");
+                    }else{
+                    controller.playerUpdate(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, turn);
+                    disableAll ();
+                    }  
+                }              
+            }
+        }
+    }//GEN-LAST:event_bt_saveplayerActionPerformed
+
+    private void bt_saveslotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_saveslotActionPerformed
+        // TODO add your handling code here:
+        String id ;
+        String price;
+        String name;
+        String owner;
+        if (tf_sid.getText().isEmpty()&&Integer.parseInt(tf_sid.getText())>0&&Integer.parseInt(tf_sid.getText())<23) {
+            showMessage("Slot is empty or id not between 1 - 23");
+        }else{
+            if (tf_st_name.getText().isEmpty()&&tf_price.getText().isEmpty()&&tf_stowner.getText().isEmpty()) {
+                showMessage("Name, Price and owner should at least one have input!");
+        }else{
+                id = tf_sid.getText();
+                if (tf_st_name.getText().isEmpty()) {
+                    name="";
+                    }else{
+                        name = tf_st_name.getText();
+                    }
+                if (tf_price.getText().isEmpty()) {
+                    price="";
+                    }else{
+                        price= tf_price.getText();
+                    }
+                if (tf_stowner.getText().isEmpty()) {
+                    owner="";
+                    }else{
+                        owner= tf_stowner.getText();
+                    }     
+                controller.updateSlot(id, name, price, owner);
+                disableAll ();
+            }
+        }
+        
+    }//GEN-LAST:event_bt_saveslotActionPerformed
+
+    private void rb_Bankrupt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_Bankrupt1ActionPerformed
+
+    private void rb_Bankrupt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_Bankrupt2ActionPerformed
+    public void showMessage(String s) {
+        JOptionPane.showMessageDialog(this, s);
+    }
+    public boolean buy(int slotId, String price) {    
+        String[] options={" Yes","NO"};
+          int x = JOptionPane.showOptionDialog(null,"buy? "+slotId +"price "+price ,
+                "This slot does not have an owner yet!",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
+          System.out.println(x);     
+          if(x == 0){
+          return true;}
+          else{
+          return false;}
+    }
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        
-        
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new View().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_em;
@@ -884,6 +1160,12 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton bt_roll;
     private javax.swing.JButton bt_saveplayer;
     private javax.swing.JButton bt_saveslot;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -911,26 +1193,101 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton rb_Bankrupt;
     private javax.swing.JRadioButton rb_Bankrupt1;
     private javax.swing.JRadioButton rb_Bankrupt2;
     private javax.swing.JRadioButton rb_Bankrupt3;
-    private javax.swing.JRadioButton tf_active;
-    private javax.swing.JRadioButton tf_active1;
-    private javax.swing.JRadioButton tf_active2;
-    private javax.swing.JRadioButton tf_active3;
-    private javax.swing.JTextField tf_balance;
+    private javax.swing.JRadioButton rb_Bankrupt4;
+    private javax.swing.JRadioButton rb_active1;
+    private javax.swing.JRadioButton rb_active2;
+    private javax.swing.JRadioButton rb_active3;
+    private javax.swing.JRadioButton rb_active4;
     private javax.swing.JTextField tf_balance1;
     private javax.swing.JTextField tf_balance2;
-    private javax.swing.JTextField tf_position;
+    private javax.swing.JTextField tf_balance3;
+    private javax.swing.JTextField tf_balance4;
     private javax.swing.JTextField tf_position1;
     private javax.swing.JTextField tf_position2;
     private javax.swing.JTextField tf_position3;
     private javax.swing.JTextField tf_position4;
-    private javax.swing.JTextField tf_position9;
     private javax.swing.JTextField tf_price;
     private javax.swing.JTextField tf_sid;
     private javax.swing.JTextField tf_st_name;
     private javax.swing.JTextField tf_stowner;
+    private javax.swing.JTextField tf_turn;
     // End of variables declaration//GEN-END:variables
+
+    public void update(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn) {
+        tf_turn.setText(nTurn);
+        tf_position1.setText(p1Pos);
+        tf_balance1.setText(p1Balance);        
+        if(p1Status == "Active"){
+            rb_active1.setSelected(true);
+            rb_Bankrupt1.setSelected(false);
+        }
+        else{
+        rb_active1.setSelected(false);
+        rb_Bankrupt1.setSelected(true);
+                }       
+        tf_position2.setText(p2Pos);
+        tf_balance2.setText(p2Balance);    
+        if(p2Status == "Active"){
+            rb_active2.setSelected(true); 
+            rb_Bankrupt2.setSelected(false);  
+        }
+        else{        
+        rb_Bankrupt2.setSelected(true);
+        rb_active2.setSelected(false);
+                }      
+        tf_position3.setText(p3Pos);
+        tf_balance3.setText(p3Balance);
+        
+          if(p3Status == "Active"){
+            rb_active3.setSelected(true);
+            rb_Bankrupt3.setSelected(false);           
+        }
+        else{
+           rb_active3.setSelected(false);  
+           rb_Bankrupt3.setSelected(true);
+                }        
+        tf_position4.setText(p4Pos);
+        tf_balance4.setText(p4Balance);
+        
+         if(p4Status == "Active"){
+            rb_active4.setSelected(true); 
+            rb_Bankrupt4.setSelected(false);     
+        }
+        else{
+             rb_active4.setSelected(false);  
+             rb_Bankrupt4.setSelected(true);
+                }
+    }
+
+    public void disableAll (){
+        // setting the balance and position to false    
+        tf_position1.setEditable(false);
+        tf_balance1.setEditable(false);        
+        tf_position4.setEditable(false);
+        tf_balance4.setEditable(false);
+        tf_position2.setEditable(false);
+        tf_balance3.setEditable(false);     
+        tf_balance2.setEditable(false);
+        tf_balance4.setEditable(false);        
+        tf_position3.setEditable(false);
+        tf_balance4.setEditable(false);
+        rb_active1.setEnabled(false);
+        rb_Bankrupt1.setEnabled(false);
+        rb_active2.setEnabled(false);
+        rb_Bankrupt2.setEnabled(false);         
+        rb_active3.setEnabled(false);
+        rb_Bankrupt3.setEnabled(false);
+        rb_active4.setEnabled(false);
+        rb_Bankrupt4.setEnabled(false);
+        tf_price.setEditable(false);
+        tf_sid.setEditable(false);
+        tf_st_name.setEditable(false);
+        tf_stowner.setEditable(false);
+        tf_turn.setEditable(false);
+        bt_saveplayer.setEnabled(false);
+        bt_saveslot.setEnabled(false);
+    }
 }

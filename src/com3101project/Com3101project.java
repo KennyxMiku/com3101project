@@ -25,13 +25,14 @@ public class Com3101project {
         control.setView(view);
         view.setController(control);
         view.setModel(model);
-        model.newGame();
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                view.setVisible(true);
             }
         });
+        model.newGame();
+        
+        
       
         
         

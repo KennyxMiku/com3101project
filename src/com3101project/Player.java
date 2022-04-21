@@ -39,7 +39,6 @@ public class Player {
         balance= balance-money;
     }
     
-    
     public void clear(){
         slotOwned.clear();
     }
