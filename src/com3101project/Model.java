@@ -495,7 +495,7 @@ public class Model {
        int slot=Integer.parseInt(slotId);
        int tradePrice=Integer.parseInt(price);
        if(players[buy].getBalance()-tradePrice>=0){
-           if(checkLandStatus(slot).equals(sell)){
+           if(checkLandStatus(slot).equals(seller)){
                 players[buy].deduct(tradePrice);
                 players[sell].add(tradePrice);
                 slots[slot].setOwner(buyer);
