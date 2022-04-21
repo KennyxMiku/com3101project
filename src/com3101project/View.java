@@ -1206,6 +1206,9 @@ public class View extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Trade function 
+     */
     public void tradeBuy(){
         String buyer=tf_turn.getText();
         String seller = JOptionPane.showInputDialog(null, "Seller? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
