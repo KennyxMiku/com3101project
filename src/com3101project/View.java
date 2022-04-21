@@ -1024,62 +1024,106 @@ public class View extends javax.swing.JFrame {
 
     private void bt_emActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_emActionPerformed
         // TODO add your handling code here:
-          if (tf_position1.isEditable()){
-              
-                tf_position1.setEditable(false);
-                tf_balance1.setEditable(false);
-                rb_active1.setEnabled(false);
-                rb_Bankrupt1.setEnabled(false);
-                tf_position2.setEditable(false);
-                tf_balance2.setEditable(false);
-                rb_active2.setEnabled(false);
-                rb_Bankrupt2.setEnabled(false);
-                tf_position3.setEditable(false);
-                tf_balance3.setEditable(false);
-                rb_active3.setEnabled(false);
-                rb_Bankrupt3.setEnabled(false);
-                tf_position4.setEditable(false);
-                tf_balance4.setEditable(false);
-                rb_active4.setEnabled(false);
-                rb_Bankrupt4.setEnabled(false);
-                tf_price.setEditable(false);
-                tf_sid.setEditable(false);
-                tf_st_name.setEditable(false);
-                tf_stowner.setEditable(false);
-                tf_turn.setEditable(false);
-                bt_saveplayer.setEnabled(false);
-                bt_saveslot.setEnabled(false);
-          }else{
-                tf_position1.setEditable(true);
-                tf_balance1.setEditable(true);
-                rb_active1.setEnabled(true);
-                rb_Bankrupt1.setEnabled(true);    
-                tf_position2.setEditable(true);
-                tf_balance2.setEditable(true);
-                rb_active2.setEnabled(true);
-                rb_Bankrupt2.setEnabled(true);
-                tf_position3.setEditable(true);
-                tf_balance3.setEditable(true);
-                rb_active3.setEnabled(true);
-                rb_Bankrupt3.setEnabled(true);               
-                tf_position4.setEditable(true);
-                tf_balance4.setEditable(true);
-                rb_active4.setEnabled(true);
-                rb_Bankrupt4.setEnabled(true);
-                tf_price.setEditable(true);
-                tf_sid.setEditable(true);
-                tf_st_name.setEditable(true);
-                tf_stowner.setEditable(true);
-                tf_turn.setEditable(true);
-                bt_saveplayer.setEnabled(true);
-                bt_saveslot.setEnabled(true);
-          }
-//// 
-
+          switching();
+////
     }//GEN-LAST:event_bt_emActionPerformed
 
     private void bt_saveplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_saveplayerActionPerformed
         // TODO add your handling code here:
+        editPlayer();
+    }//GEN-LAST:event_bt_saveplayerActionPerformed
+
+    private void bt_saveslotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_saveslotActionPerformed
+        // TODO add your handling code here:
+        editSlot();
+    }//GEN-LAST:event_bt_saveslotActionPerformed
+
+    private void rb_Bankrupt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_Bankrupt1ActionPerformed
+
+    private void rb_Bankrupt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rb_Bankrupt2ActionPerformed
+
+    private void sell_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_btnActionPerformed
+        // TODO add your handling code here:
+       tradeSell();
+    }//GEN-LAST:event_sell_btnActionPerformed
+
+    private void buy_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_btnActionPerformed
+        // TODO add your handling code here:
+         tradeBuy();
+    }//GEN-LAST:event_buy_btnActionPerformed
+    public void showMessage(String s) {
+        JOptionPane.showMessageDialog(this, s);
+    }
+    
+    public boolean buy(int slotId, String price, String name) {    
+        String[] options={" Yes","NO"};
+          int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"+"Would you like to buy this land? \n\n"+
+                  "Id: "+slotId +" Slot name: "+name+ " price: $"+price ,"Buy land slot",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
+          if(choice == 0){
+          return true;}
+          else{
+          return false;}
+    }
+    
+    public void switching(){
+        if (tf_position1.isEditable()){
+
+                    tf_position1.setEditable(false);
+                    tf_balance1.setEditable(false);
+                    rb_active1.setEnabled(false);
+                    rb_Bankrupt1.setEnabled(false);
+                    tf_position2.setEditable(false);
+                    tf_balance2.setEditable(false);
+                    rb_active2.setEnabled(false);
+                    rb_Bankrupt2.setEnabled(false);
+                    tf_position3.setEditable(false);
+                    tf_balance3.setEditable(false);
+                    rb_active3.setEnabled(false);
+                    rb_Bankrupt3.setEnabled(false);
+                    tf_position4.setEditable(false);
+                    tf_balance4.setEditable(false);
+                    rb_active4.setEnabled(false);
+                    rb_Bankrupt4.setEnabled(false);
+                    tf_price.setEditable(false);
+                    tf_sid.setEditable(false);
+                    tf_st_name.setEditable(false);
+                    tf_stowner.setEditable(false);
+                    tf_turn.setEditable(false);
+                    bt_saveplayer.setEnabled(false);
+                    bt_saveslot.setEnabled(false);
+              }else{
+                    tf_position1.setEditable(true);
+                    tf_balance1.setEditable(true);
+                    rb_active1.setEnabled(true);
+                    rb_Bankrupt1.setEnabled(true);    
+                    tf_position2.setEditable(true);
+                    tf_balance2.setEditable(true);
+                    rb_active2.setEnabled(true);
+                    rb_Bankrupt2.setEnabled(true);
+                    tf_position3.setEditable(true);
+                    tf_balance3.setEditable(true);
+                    rb_active3.setEnabled(true);
+                    rb_Bankrupt3.setEnabled(true);               
+                    tf_position4.setEditable(true);
+                    tf_balance4.setEditable(true);
+                    rb_active4.setEnabled(true);
+                    rb_Bankrupt4.setEnabled(true);
+                    tf_price.setEditable(true);
+                    tf_sid.setEditable(true);
+                    tf_st_name.setEditable(true);
+                    tf_stowner.setEditable(true);
+                    tf_turn.setEditable(true);
+                    bt_saveplayer.setEnabled(true);
+                    bt_saveslot.setEnabled(true);
+              }
+    }
+    
+    public void editPlayer(){
          String turn = tf_turn.getText();
         
          String p1Pos = tf_position1.getText();
@@ -1127,10 +1171,9 @@ public class View extends javax.swing.JFrame {
                 }              
             }
         }
-    }//GEN-LAST:event_bt_saveplayerActionPerformed
-
-    private void bt_saveslotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_saveslotActionPerformed
-        // TODO add your handling code here:
+    }
+    
+    public void editSlot(){
         String id ;
         String price;
         String name;
@@ -1161,41 +1204,10 @@ public class View extends javax.swing.JFrame {
                 disableAll ();
             }
         }
-        
-    }//GEN-LAST:event_bt_saveslotActionPerformed
-
-    private void rb_Bankrupt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rb_Bankrupt1ActionPerformed
-
-    private void rb_Bankrupt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rb_Bankrupt2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rb_Bankrupt2ActionPerformed
-
-    private void sell_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_btnActionPerformed
-        // TODO add your handling code here:
-         String seller=tf_turn.getText();
-        String buyer = JOptionPane.showInputDialog(null, "Buyer? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
-        if (buyer.equals("1")||buyer.equals("2")||buyer.equals("3")||buyer.equals("4")) {
-            String slot = JOptionPane.showInputDialog(null, "Slot Id? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
-             if (Integer.parseInt(slot)>0&&Integer.parseInt(slot)<23) {
-                String price = JOptionPane.showInputDialog(null, "Price? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
-                 if (Integer.parseInt(price)>0) {
-                     controller.trade(buyer, seller, slot, price);
-                 }else{
-                    showMessage("Price should be larger than or equal to 0! ");
-                 }     
-            }else{
-              showMessage("Land slot id invalid (should between 1-22 )! ");
-             }
-        }else{
-            showMessage("Buyer id invalid (should between 1-4 )! ");
-        }
-    }//GEN-LAST:event_sell_btnActionPerformed
-
-    private void buy_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_btnActionPerformed
-        // TODO add your handling code here:
-         String buyer=tf_turn.getText();
+    }
+    
+    public void tradeBuy(){
+        String buyer=tf_turn.getText();
         String seller = JOptionPane.showInputDialog(null, "Seller? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
         if (seller.equals("1")||seller.equals("2")||seller.equals("3")||seller.equals("4")) {
             String slot = JOptionPane.showInputDialog(null, "Slot Id? ","Trade (buy)", JOptionPane.QUESTION_MESSAGE );
@@ -1212,89 +1224,28 @@ public class View extends javax.swing.JFrame {
         }else{
             showMessage("Buyer id invalid (should between 1-4 )! ");
         }
-    }//GEN-LAST:event_buy_btnActionPerformed
-    public void showMessage(String s) {
-        JOptionPane.showMessageDialog(this, s);
-    }
-    public boolean buy(int slotId, String price, String name) {    
-        String[] options={" Yes","NO"};
-          int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"+"Would you like to buy this land? \n\n"+
-                  "Id: "+slotId +" Slot name: "+name+ " price: $"+price ,"Buy land slot",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
-          if(choice == 0){
-          return true;}
-          else{
-          return false;}
     }
     
-    /**
-     * @param args the command line arguments
-     */
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bt_em;
-    private javax.swing.JButton bt_owner;
-    private javax.swing.JButton bt_roll;
-    private javax.swing.JButton bt_saveplayer;
-    private javax.swing.JButton bt_saveslot;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton buy_btn;
-    private javax.swing.Box.Filler filler1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton rb_Bankrupt1;
-    private javax.swing.JRadioButton rb_Bankrupt2;
-    private javax.swing.JRadioButton rb_Bankrupt3;
-    private javax.swing.JRadioButton rb_Bankrupt4;
-    private javax.swing.JRadioButton rb_active1;
-    private javax.swing.JRadioButton rb_active2;
-    private javax.swing.JRadioButton rb_active3;
-    private javax.swing.JRadioButton rb_active4;
-    private javax.swing.JButton sell_btn;
-    private javax.swing.JTextField tf_balance1;
-    private javax.swing.JTextField tf_balance2;
-    private javax.swing.JTextField tf_balance3;
-    private javax.swing.JTextField tf_balance4;
-    private javax.swing.JTextField tf_position1;
-    private javax.swing.JTextField tf_position2;
-    private javax.swing.JTextField tf_position3;
-    private javax.swing.JTextField tf_position4;
-    private javax.swing.JTextField tf_price;
-    private javax.swing.JTextField tf_sid;
-    private javax.swing.JTextField tf_st_name;
-    private javax.swing.JTextField tf_stowner;
-    private javax.swing.JTextField tf_turn;
-    // End of variables declaration//GEN-END:variables
-
+    public void tradeSell(){
+          String seller=tf_turn.getText();
+        String buyer = JOptionPane.showInputDialog(null, "Buyer? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+        if (buyer.equals("1")||buyer.equals("2")||buyer.equals("3")||buyer.equals("4")) {
+            String slot = JOptionPane.showInputDialog(null, "Slot Id? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+             if (Integer.parseInt(slot)>0&&Integer.parseInt(slot)<23) {
+                String price = JOptionPane.showInputDialog(null, "Price? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
+                 if (Integer.parseInt(price)>0) {
+                     controller.trade(buyer, seller, slot, price);
+                 }else{
+                    showMessage("Price should be larger than or equal to 0! ");
+                 }     
+            }else{
+              showMessage("Land slot id invalid (should between 1-22 )! ");
+             }
+        }else{
+            showMessage("Buyer id invalid (should between 1-4 )! ");
+        }
+    }
+    
     public void update(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn) {
         tf_turn.setText(nTurn);
         tf_position1.setText(p1Pos);
@@ -1369,4 +1320,73 @@ public class View extends javax.swing.JFrame {
         bt_saveplayer.setEnabled(false);
         bt_saveslot.setEnabled(false);
     }
+    /**
+     * @param args the command line arguments
+     */
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_em;
+    private javax.swing.JButton bt_owner;
+    private javax.swing.JButton bt_roll;
+    private javax.swing.JButton bt_saveplayer;
+    private javax.swing.JButton bt_saveslot;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JButton buy_btn;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JRadioButton rb_Bankrupt1;
+    private javax.swing.JRadioButton rb_Bankrupt2;
+    private javax.swing.JRadioButton rb_Bankrupt3;
+    private javax.swing.JRadioButton rb_Bankrupt4;
+    private javax.swing.JRadioButton rb_active1;
+    private javax.swing.JRadioButton rb_active2;
+    private javax.swing.JRadioButton rb_active3;
+    private javax.swing.JRadioButton rb_active4;
+    private javax.swing.JButton sell_btn;
+    private javax.swing.JTextField tf_balance1;
+    private javax.swing.JTextField tf_balance2;
+    private javax.swing.JTextField tf_balance3;
+    private javax.swing.JTextField tf_balance4;
+    private javax.swing.JTextField tf_position1;
+    private javax.swing.JTextField tf_position2;
+    private javax.swing.JTextField tf_position3;
+    private javax.swing.JTextField tf_position4;
+    private javax.swing.JTextField tf_price;
+    private javax.swing.JTextField tf_sid;
+    private javax.swing.JTextField tf_st_name;
+    private javax.swing.JTextField tf_stowner;
+    private javax.swing.JTextField tf_turn;
+    // End of variables declaration//GEN-END:variables
+
+
 }
