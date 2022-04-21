@@ -1207,7 +1207,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * Trade function 
+     * Trade buy function for asking the buyer to input the seller id, slot id and price
      */
     public void tradeBuy(){
         String buyer=tf_turn.getText();
@@ -1229,6 +1229,9 @@ public class View extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Trade sell function for asking the seller to input buyer id, slot id and price
+     */
     public void tradeSell(){
           String seller=tf_turn.getText();
         String buyer = JOptionPane.showInputDialog(null, "Buyer? ","Trade (sell)", JOptionPane.QUESTION_MESSAGE );
