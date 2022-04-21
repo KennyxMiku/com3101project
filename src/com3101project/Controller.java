@@ -20,6 +20,9 @@ public class Controller {
         this.model = m;        
     }
     
+    /**
+     * point to newGame() in model
+     */
     public void newGame(){
         model.newGame();
     }
@@ -53,6 +56,9 @@ public class Controller {
             model.editPlayer(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
     }
     
+    /**
+     * point to rollDice() in model
+     */
     public void rollDice(){
         model.rollDice();
     }
