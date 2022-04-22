@@ -1048,7 +1048,7 @@ public class View extends javax.swing.JFrame {
 
     private void sell_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sell_btnActionPerformed
         // TODO add your handling code here:
-       tradeSell();
+         tradeSell();
     }//GEN-LAST:event_sell_btnActionPerformed
 
     private void buy_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buy_btnActionPerformed
@@ -1070,6 +1070,9 @@ public class View extends javax.swing.JFrame {
           return false;}
     }
     
+    /**
+     * switch between editor mode or not
+     */
     public void switching(){
         if (tf_position1.isEditable()){
 
@@ -1298,6 +1301,9 @@ public class View extends javax.swing.JFrame {
                 }
     }
 
+    /**
+     * disable all textfields and radio buttons
+     */
     public void disableAll (){
         // setting the balance and position to false    
         tf_position1.setEditable(false);
