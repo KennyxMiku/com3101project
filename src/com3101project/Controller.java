@@ -53,7 +53,8 @@ public class Controller {
             String p2Status, String p3Pos, String p3Balance, 
             String p3Status, String p4Pos, String p4Balance, 
             String p4Status, String nTurn){
-            model.editPlayer(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
+            model.editPlayer(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, 
+                    p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
     }
     
     /**
@@ -68,7 +69,8 @@ public class Controller {
             String p2Status, String p3Pos, String p3Balance, 
             String p3Status, String p4Pos, String p4Balance, 
             String p4Status, String nTurn){
-            view.update(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
+            view.update(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, 
+                    p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, nTurn);
         
     }
     
