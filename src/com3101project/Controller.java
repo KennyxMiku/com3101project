@@ -19,7 +19,13 @@ public class Controller {
     public void setModel(Model m) {
         this.model = m;        
     }
-    
+    /**
+     * from view.editSlot()
+     * @param id slot id 
+     * @param name slot name 
+     * @param price slot price 
+     * @param owner player id for the new owner of the slot
+     */
     public void updateSlot(String id, String name, String price, String owner){
         if (name.equals("")&&price.equals("")) {
             if (owner.equals("1")||owner.equals("2")||owner.equals("3")||owner.equals("4")||owner.equals("0")){
@@ -40,7 +46,22 @@ public class Controller {
             } 
         }
     }
-    
+    /**
+     * call from view.editPlayer()
+     * @param p1Pos player 1 position
+     * @param p1Balance player 1 balance
+     * @param p1Status player 1 status
+     * @param p2Pos player 2 position
+     * @param p2Balance player 2 balance
+     * @param p2Status player 2 status
+     * @param p3Pos player 3 position
+     * @param p3Balance player 3 balance
+     * @param p3Status player 3 status
+     * @param p4Pos player 4 position
+     * @param p4Balance player 4 balance
+     * @param p4Status player 4 status
+     * @param nTurn current player turn
+     */
     public void playerUpdate(String p1Pos, String p1Balance, 
             String p1Status, String p2Pos, String p2Balance, 
             String p2Status, String p3Pos, String p3Balance, 
@@ -57,6 +78,22 @@ public class Controller {
         model.rollDice();
     }
     
+    /**
+     * call from model.updatePlayerPosition()
+     * @param p1Pos player 1 position
+     * @param p1Balance player 1 balance
+     * @param p1Status player 1 status
+     * @param p2Pos player 2 position
+     * @param p2Balance player 2 balance
+     * @param p2Status player 2 status
+     * @param p3Pos player 3 position
+     * @param p3Balance player 3 balance
+     * @param p3Status player 3 status
+     * @param p4Pos player 4 position
+     * @param p4Balance player 4 balance
+     * @param p4Status player 4 status
+     * @param nTurn current player turn
+     */
     public void viewUpdate(String p1Pos, String p1Balance, 
             String p1Status, String p2Pos, String p2Balance, 
             String p2Status, String p3Pos, String p3Balance, 
@@ -67,20 +104,41 @@ public class Controller {
         
     }
     
+    /**
+     * print massage
+     * @param msg massage
+     */
     public void viewShowMessage(String msg){
         view.showMessage(msg);
     }
     
+    /**
+     * show the slots are owned by which player
+     */
     public void lookForSlotOwned(){
         String slot=model.showSlotOwned();
         view.showMessage(slot);
     }
 
+    /**
+     * call from model.buyLand()
+     * @param slotId slot id
+     * @param price slot price
+     * @param name slot name
+     * @return the choice from view
+     */
     public boolean buy(int slotId, String price, String name){
         boolean choice=view.buy(slotId, price, name);
         return choice;  
     }
     
+    /**
+     * call from view.tradeBuy() and view.tradeSell()
+     * @param buyer player id for buyer
+     * @param seller player id for seller
+     * @param slotId slot id of trading
+     * @param price price of the slot in this trading 
+     */
     public void trade(String buyer, String seller, String slotId, String price){
         model.trade(buyer,seller,slotId,price);
     }
