@@ -414,8 +414,9 @@ public class Model {
      * @param p4Status player 4 status
      * @param nTurn current player turn
      */
-   public void editPlayer(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, 
-            String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn)
+   public void editPlayer(String p1Pos, String p1Balance, String p1Status, String p2Pos, 
+           String p2Balance, String p2Status, String p3Pos, String p3Balance, 
+           String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn)
     {       //update turn
             turn=Integer. parseInt(nTurn);
             //update player 1
