@@ -1135,7 +1135,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * A function to save all the textfields and radio buttons that have been editted
+     * A function to collect all player data from the textfields and radio buttons and send to the controller 
      */
     public void editPlayer(){
          String turn = tf_turn.getText();
@@ -1189,7 +1189,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * A function to save all the slot information that have been editted
+     * A function to collect slot data want to edit and send to controller
      */
     public void editSlot(){
         String id ;

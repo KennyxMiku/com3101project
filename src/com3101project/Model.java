@@ -371,8 +371,6 @@ public class Model {
                 }
             }
         }
-        
-         
             load();
             updatePlayerPosition();
             control.viewShowMessage("Land slot edit is done!");
@@ -399,10 +397,9 @@ public class Model {
                 players[playerNum].removeSlot(slot);
                 players[player].addSlot(slot);
             }
-           updatePlayerPosition();
-           control.viewShowMessage("Edit land owner success! ");
-           //send message
-        }   
+        }
+        updatePlayerPosition();
+        control.viewShowMessage("Edit land owner success! ");
     }
     /**
      * change player status

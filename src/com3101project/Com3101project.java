@@ -5,7 +5,10 @@
 package com3101project;
 
 import java.util.*;
-
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import javax.sound.sampled.*;
 /**
  *
  * @author kenny
@@ -16,7 +19,13 @@ public class Com3101project {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        File file=new File("energy.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip player = AudioSystem.getClip();
+        player.open(audioStream);
+        player.start();
+        player.loop(Clip.LOOP_CONTINUOUSLY);
         View view = new View();
         Model model = new Model();
         Controller control = new Controller();
@@ -31,11 +40,6 @@ public class Com3101project {
             }
         });
         model.newGame();
-        
-        
-      
-        
-        
     }
     
 }
