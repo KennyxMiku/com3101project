@@ -177,7 +177,7 @@ public class Model {
             nextTurn(turn);
         }
         activePlayer.remove(playerId);       
-        control.viewShowMessage(playerId+" is bankrupt");
+        control.viewShowMessage("Player "+playerId+" is bankrupt");
         checkbankrupt();
     }
     /**
@@ -185,7 +185,7 @@ public class Model {
      */
     public void checkbankrupt(){
     if (activePlayer.size()==1) {
-             control.viewShowMessage(activePlayer.get(0)+" win !");
+             control.viewShowMessage("Player "+activePlayer.get(0)+" win !");
              newGame();
         }
     }
@@ -209,7 +209,7 @@ public class Model {
         int price=Integer. parseInt(slots[slotId].getPrice());
         int pBalance=players[player].getBalance();
         int oBalance=players[owner].getBalance();
-         control.viewShowMessage("This slot"+slotId+" owned by "+ownerId+" need to pay "+price*0.1);
+         control.viewShowMessage("This slot "+slotId+" owned by Player "+ownerId+" you need to pay $"+price*0.1);
         if(pBalance-(price*0.1)>=0){
             players[player].deduct((int) (price*0.1));
             players[owner].add((int) (price*0.1));
@@ -226,10 +226,8 @@ public class Model {
         String display="";
         
         for(int i=0;i<23;i++){
-            String temp=("Slot: "+String.format("%1$-2s", slots[i].getId())+" Owner: "
-                    +slots[i].getOwner()+" Price: $"
-                    +String.format("%1$-10s", slots[i].getPrice())+" Name: "
-                    +String.format("%1$-25s", slots[i].getName())+"\n");
+            String temp=("Slot: "+String.format("%1$-2s", slots[i].getId())+" Owner: "+slots[i].getOwner()+" Price: $"
+                    +String.format("%1$-10s", slots[i].getPrice())+" Name: "+String.format("%1$-25s", slots[i].getName())+"\n");
             display += temp;
         }
         
@@ -270,7 +268,7 @@ public class Model {
         File oldFile= new File(path);
         File newFile= new File(temp);
         String ID=""; String oldName=""; String oldPrice="";
-        
+        //if user only change slot price
         if (name.equals("")) {
               try
             {   
@@ -305,7 +303,7 @@ public class Model {
                 e.printStackTrace();
             }  
         }else{
-            if (price.equals("")) {
+            if (price.equals("")) {//if user only change slot name
                     try
                 {   
                     FileWriter fWriter = new FileWriter(temp,true);
@@ -338,7 +336,7 @@ public class Model {
                 }catch(Exception e){
                     e.printStackTrace();
                 }
-            }else{
+            }else{// user change slot name and price
                     try
                 {   
                     FileWriter fWriter = new FileWriter(temp,true);
@@ -392,10 +390,15 @@ public class Model {
             slots[slotNum].setOwner(owner);
             players[player].addSlot(slot);
         }else{ 
-           int playerNum=Integer. parseInt(slots[slotNum].getOwner());
-           slots[slotNum].setOwner(owner);
-           players[playerNum].removeSlot(slot);
-           players[player].addSlot(slot);
+            int playerNum=Integer. parseInt(slots[slotNum].getOwner());
+            if (owner.equals("0")) {
+                slots[slotNum].setOwner(owner);
+                players[playerNum].removeSlot(slot);
+            }else{
+                slots[slotNum].setOwner(owner);
+                players[playerNum].removeSlot(slot);
+                players[player].addSlot(slot);
+            }
            updatePlayerPosition();
            control.viewShowMessage("Edit land owner success! ");
            //send message
@@ -417,9 +420,8 @@ public class Model {
      * @param p4Status player 4 status
      * @param nTurn current player turn
      */
-   public void editPlayer(String p1Pos, String p1Balance, String p1Status, String p2Pos, 
-           String p2Balance, String p2Status, String p3Pos, String p3Balance, 
-           String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn)
+   public void editPlayer(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, 
+            String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn)
     {       //update turn
             turn=Integer. parseInt(nTurn);
             //update player 1
