@@ -1168,7 +1168,8 @@ public class View extends javax.swing.JFrame {
                     if (Integer.parseInt(p4Pos)<0||Integer.parseInt(p4Pos)>23) {
                         showMessage("Player 4 postiton invaild (between 0-22) ");
                     }else{
-                    controller.playerUpdate(p1Pos, p1Balance, p1Status, p2Pos, p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, turn);
+                    controller.playerUpdate(p1Pos, p1Balance, p1Status, p2Pos, 
+                            p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, turn);
                     disableAll ();
                     }  
                 }              
@@ -1255,7 +1256,9 @@ public class View extends javax.swing.JFrame {
         }
     }
     
-    public void update(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, String p2Status, String p3Pos, String p3Balance, String p3Status, String p4Pos, String p4Balance, String p4Status, String nTurn) {
+    public void update(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, 
+            String p2Status, String p3Pos, String p3Balance, String p3Status, 
+            String p4Pos, String p4Balance, String p4Status, String nTurn) {
         tf_turn.setText(nTurn);
         tf_position1.setText(p1Pos);
         tf_balance1.setText(p1Balance);        
