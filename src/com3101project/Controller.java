@@ -20,7 +20,7 @@ public class Controller {
         this.model = m;        
     }
     /**
-     * from view.editSlot()
+     * call from view.editSlot() to model.editOwner()
      * @param id slot id 
      * @param name slot name 
      * @param price slot price 
@@ -47,7 +47,7 @@ public class Controller {
         }
     }
     /**
-     * call from view.editPlayer()
+     * call from view.editPlayer() to model.editPlayer()
      * @param p1Pos player 1 position
      * @param p1Balance player 1 balance
      * @param p1Status player 1 status
@@ -79,7 +79,7 @@ public class Controller {
     }
     
     /**
-     * call from model.updatePlayerPosition()
+     * call from model.updatePlayerPosition() to view.update()
      * @param p1Pos player 1 position
      * @param p1Balance player 1 balance
      * @param p1Status player 1 status
@@ -121,7 +121,7 @@ public class Controller {
     }
 
     /**
-     * call from model.buyLand()
+     * call from model.buyLand() to view.buy()
      * @param slotId slot id
      * @param price slot price
      * @param name slot name
