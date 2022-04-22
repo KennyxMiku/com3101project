@@ -1061,8 +1061,9 @@ public class View extends javax.swing.JFrame {
     
     public boolean buy(int slotId, String price, String name) {    
         String[] options={" Yes","NO"};
-          int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"+"Would you like to buy this land? \n\n"+
-                  "Id: "+slotId +" Slot name: "+name+ " price: $"+price ,"Buy land slot",
+          int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"
+                  +"Would you like to buy this land? \n\n"+"Id: "+slotId +" Slot name: "
+                  +name+ " price: $"+price ,"Buy land slot",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);  
           if(choice == 0){
           return true;}
