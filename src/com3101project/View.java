@@ -1059,6 +1059,13 @@ public class View extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, s);
     }
     
+    /**
+     * ask user to buy the land or not
+     * @param slotId slot id
+     * @param price slot price
+     * @param name slot name
+     * @return choice to controller
+     */
     public boolean buy(int slotId, String price, String name) {    
         String[] options={" Yes","NO"};
           int choice = JOptionPane.showOptionDialog(null,"This slot does not have an owner yet! \n"
@@ -1072,7 +1079,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * switch between editor mode or not
+     * switch between editor mode and non-editor mode
      */
     public void switching(){
         if (tf_position1.isEditable()){
@@ -1127,6 +1134,9 @@ public class View extends javax.swing.JFrame {
               }
     }
     
+    /**
+     * A function to save all the textfields and radio buttons that have been editted
+     */
     public void editPlayer(){
          String turn = tf_turn.getText();
         
@@ -1178,6 +1188,9 @@ public class View extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * A function to save all the slot information that have been editted
+     */
     public void editSlot(){
         String id ;
         String price;
@@ -1212,7 +1225,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * Trade buy function for asking the buyer to input the seller id, slot id and price
+     * Trade buy function for asking the buyer to input the player id of seller, slot id and price
      */
     public void tradeBuy(){
         String buyer=tf_turn.getText();
@@ -1235,7 +1248,7 @@ public class View extends javax.swing.JFrame {
     }
     
     /**
-     * Trade sell function for asking the seller to input buyer id, slot id and price
+     * Trade sell function for asking the seller to input player id of buyer, slot id and price
      */
     public void tradeSell(){
           String seller=tf_turn.getText();
@@ -1257,6 +1270,22 @@ public class View extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * update all the textfields and radio buttons
+     * @param p1Pos player 1 position
+     * @param p1Balance player 1 balance
+     * @param p1Status player 1 status
+     * @param p2Pos player 2 position
+     * @param p2Balance player 2 balance
+     * @param p2Status player 2 status
+     * @param p3Pos player 3 position
+     * @param p3Balance player 3 balance
+     * @param p3Status player 3 status
+     * @param p4Pos player 4 position
+     * @param p4Balance player 4 balance
+     * @param p4Status player 4 status
+     * @param nTurn current player turn
+     */
     public void update(String p1Pos, String p1Balance, String p1Status, String p2Pos, String p2Balance, 
             String p2Status, String p3Pos, String p3Balance, String p3Status, 
             String p4Pos, String p4Balance, String p4Status, String nTurn) {
