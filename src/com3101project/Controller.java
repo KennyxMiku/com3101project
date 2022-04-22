@@ -20,13 +20,6 @@ public class Controller {
         this.model = m;        
     }
     
-    /**
-     * point to newGame() in model
-     */
-    public void newGame(){
-        model.newGame();
-    }
-    
     public void updateSlot(String id, String name, String price, String owner){
         if (name.equals("")&&price.equals("")) {
             if (owner.equals("1")||owner.equals("2")||owner.equals("3")||owner.equals("4")||owner.equals("0")){
