@@ -44,7 +44,6 @@ public class Model {
     {
         Random rand = new Random();
         int moving = rand.nextInt((10 - 1) + 1) + 1;
-        control.viewShowMessage("Player "+turn+" roll "+moving);
         int position = players[turn].getPosition();
         if(position+moving >=23){
             position = (position+moving)%22-1;
@@ -54,7 +53,8 @@ public class Model {
             players[turn].setPosition(position+moving);
         }
         position = players[turn].getPosition();
-        control.viewShowMessage("Player"+turn+" latest position is "+players[turn].getPosition());
+        control.viewShowMessage("Player "+turn+" roll "+moving+"\nPlayer"+turn+" latest position is "+players[turn].getPosition());
+        updatePlayerPosition();
         if (checkLandStatus(position).equals(Integer.toString(turn))||position==0) { 
             
         }else{
@@ -70,8 +70,6 @@ public class Model {
         }
         checkbankrupt();
         updatePlayerPosition();
-        //not finish
-        //function update to controller
     }
     /**
      * turn move to next player
@@ -127,7 +125,6 @@ public class Model {
             }
             control.viewUpdate(postion1,balance1,status1,postion2,balance2,status2,
                     postion3,balance3,status3,postion4,balance4,status4,nTurn);
-        // need to be done
     }
     /**
      * ask player buy the slot or not
