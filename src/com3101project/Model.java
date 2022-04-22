@@ -125,7 +125,8 @@ public class Model {
             }else{
                 status4="Bankrupt";
             }
-            control.viewUpdate(postion1,balance1,status1,postion2,balance2,status2,postion3,balance3,status3,postion4,balance4,status4,nTurn);
+            control.viewUpdate(postion1,balance1,status1,postion2,balance2,status2,
+                    postion3,balance3,status3,postion4,balance4,status4,nTurn);
         // need to be done
     }
     /**
@@ -225,8 +226,10 @@ public class Model {
         String display="";
         
         for(int i=0;i<23;i++){
-            String temp=("Slot: "+String.format("%1$-2s", slots[i].getId())+" Owner: "+slots[i].getOwner()+" Price: $"
-                    +String.format("%1$-10s", slots[i].getPrice())+" Name: "+String.format("%1$-25s", slots[i].getName())+"\n");
+            String temp=("Slot: "+String.format("%1$-2s", slots[i].getId())+" Owner: "
+                    +slots[i].getOwner()+" Price: $"
+                    +String.format("%1$-10s", slots[i].getPrice())+" Name: "
+                    +String.format("%1$-25s", slots[i].getName())+"\n");
             display += temp;
         }
         
