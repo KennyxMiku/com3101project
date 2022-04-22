@@ -125,7 +125,7 @@ public class Controller {
      * @param slotId slot id
      * @param price slot price
      * @param name slot name
-     * @return the choice from view
+     * @return the choice from view to model
      */
     public boolean buy(int slotId, String price, String name){
         boolean choice=view.buy(slotId, price, name);
