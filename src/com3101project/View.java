@@ -1158,13 +1158,13 @@ public class View extends javax.swing.JFrame {
        String p3Status = buttonGroup3.getSelection().getActionCommand();
        String p4Status = buttonGroup4.getSelection().getActionCommand();
               
-         String p2Pos = tf_position2.getText();
+        String p2Pos = tf_position2.getText();
         String p2Balance = tf_balance2.getText();
        
-          String p3Pos = tf_position3.getText();
+        String p3Pos = tf_position3.getText();
         String p3Balance = tf_balance3.getText();
         
-          String p4Pos = tf_position4.getText();
+        String p4Pos = tf_position4.getText();
         String p4Balance = tf_balance4.getText();
         if (Integer.parseInt(p1Pos)<0||Integer.parseInt(p1Pos)>23) {
             showMessage("Player 1 postiton invaild (between 0-22) ");
@@ -1179,9 +1179,13 @@ public class View extends javax.swing.JFrame {
                     if (Integer.parseInt(p4Pos)<0||Integer.parseInt(p4Pos)>23) {
                         showMessage("Player 4 postiton invaild (between 0-22) ");
                     }else{
-                    controller.playerUpdate(p1Pos, p1Balance, p1Status, p2Pos, 
-                            p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, turn);
-                    disableAll ();
+                        if(Integer.parseInt(turn)<0||Integer.parseInt(turn)>5){
+                            showMessage("Turn should between 1-4! ");
+                        }else{
+                            controller.playerUpdate(p1Pos, p1Balance, p1Status, p2Pos, 
+                                p2Balance, p2Status, p3Pos, p3Balance, p3Status, p4Pos, p4Balance, p4Status, turn);
+                            disableAll ();
+                        }
                     }  
                 }              
             }

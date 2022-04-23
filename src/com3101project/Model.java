@@ -30,6 +30,7 @@ public class Model {
         players [3]=new Player("3",2000,true,0);
         players [4]=new Player("4",2000,true,0);
         slots = new Slot[23];
+        activePlayer.clear();
         activePlayer.add("1");
         activePlayer.add("2");
         activePlayer.add("3");
