@@ -42,33 +42,35 @@ public class Model {
      */
     public void rollDice()
     {
-        Random rand = new Random();
-        int moving = rand.nextInt((10 - 1) + 1) + 1;
-        int position = players[turn].getPosition();
-        if(position+moving >=23){
-            position = (position+moving)%22-1;
-            players[turn].setPosition(position);
-            players[turn].add(2000);          
-        }else{
-            players[turn].setPosition(position+moving);
-        }
-        position = players[turn].getPosition();
-        control.viewShowMessage("Player "+turn+" roll "+moving+"\nPlayer"+turn+" latest position is "+players[turn].getPosition());
-        updatePlayerPosition();
-        if (checkLandStatus(position).equals(Integer.toString(turn))||position==0) { 
-            
-        }else{
-        if (checkLandStatus(position).equals("0")) {
-                buyLand(Integer.toString(turn),position);
-            //buyland
-            }else{
-                payRentalFee(Integer.toString(turn),checkLandStatus(position),position);        
-            } 
-        }
         if (checkPlayerStatus(turn)==true) {
+            Random rand = new Random();
+            int moving = rand.nextInt((10 - 1) + 1) + 1;
+            int position = players[turn].getPosition();
+            if(position+moving >=23){
+                position = (position+moving)%22-1;
+                players[turn].setPosition(position);
+                players[turn].add(2000);          
+            }else{
+                players[turn].setPosition(position+moving);
+            }
+            position = players[turn].getPosition();
+            control.viewShowMessage("Player "+turn+" roll "+moving+"\nPlayer"+turn+" latest position is "+players[turn].getPosition());
+            updatePlayerPosition();
+            if (checkLandStatus(position).equals(Integer.toString(turn))||position==0) { 
+                // do nothing
+            }else{
+            if (checkLandStatus(position).equals("0")) {
+                    buyLand(Integer.toString(turn),position);
+                //buyland
+                }else{
+                    payRentalFee(Integer.toString(turn),checkLandStatus(position),position);        
+                } 
+            }
             nextTurn(turn);
+        }else{
+         control.viewShowMessage("This player already bankrupt! Please set turn to other active player. ");
         }
-        checkbankrupt();
+        checkWin();
         updatePlayerPosition();
     }
     /**
@@ -84,6 +86,8 @@ public class Model {
             }else{
                 turn=Integer. parseInt(activePlayer.get(pos+1));
             } 
+        }else{
+         control.viewShowMessage("This player already bankrupt! Please set turn to other active player. ");
         }
     }
     /**
@@ -133,7 +137,7 @@ public class Model {
      */
     public void buyLand(String playerId, int slotId){   
         boolean choice=control.buy(slotId, slots[slotId].getPrice(),slots[slotId].getName());
-        // ask player buy or not   call view()
+        // ask player buy or not call view()
         if(choice==true){
             int player=Integer.parseInt(playerId);
             int price=Integer.parseInt(slots[slotId].getPrice());
@@ -175,12 +179,12 @@ public class Model {
         }
         activePlayer.remove(playerId);       
         control.viewShowMessage("Player "+playerId+" is bankrupt");
-        checkbankrupt();
+        checkWin();
     }
     /**
      * check player win
      */
-    public void checkbankrupt(){
+    public void checkWin(){
     if (activePlayer.size()==1) {
              control.viewShowMessage("Player "+activePlayer.get(0)+" win !");
              newGame();
