@@ -385,19 +385,23 @@ public class Model {
      */
     public void editOwner(String slot, String owner){
         int slotNum=Integer. parseInt(slot);
-        int player=Integer. parseInt(owner);
+        int newOwner=Integer. parseInt(owner);
         if(slots[slotNum].getOwner().equals("0")){
-            slots[slotNum].setOwner(owner);
-            players[player].addSlot(slot);
-        }else{ 
-            int playerNum=Integer. parseInt(slots[slotNum].getOwner());
             if (owner.equals("0")) {
                 slots[slotNum].setOwner(owner);
-                players[playerNum].removeSlot(slot);
             }else{
                 slots[slotNum].setOwner(owner);
-                players[playerNum].removeSlot(slot);
-                players[player].addSlot(slot);
+                players[newOwner].addSlot(slot);
+               }
+        }else{ 
+            int oldOwner=Integer. parseInt(slots[slotNum].getOwner());
+            if (owner.equals("0")) {
+                slots[slotNum].setOwner(owner);
+                players[oldOwner].removeSlot(slot);
+            }else{
+                slots[slotNum].setOwner(owner);
+                players[oldOwner].removeSlot(slot);
+                players[newOwner].addSlot(slot);
             }
         }
         updatePlayerPosition();

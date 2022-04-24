@@ -7,6 +7,11 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.*;
 /**
  *
  * @author kenny
@@ -716,11 +721,11 @@ public class View extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_balance2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rb_Bankrupt2)
-                        .addComponent(rb_active2)))
+                        .addComponent(rb_active2))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -1022,7 +1027,16 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_rb_active1ActionPerformed
 
     private void bt_rollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_rollActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            diceSound();
+        } catch (IOException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        }
         controller.rollDice();
     }//GEN-LAST:event_bt_rollActionPerformed
 
@@ -1372,6 +1386,14 @@ public class View extends javax.swing.JFrame {
         tf_turn.setEditable(false);
         bt_saveplayer.setEnabled(false);
         bt_saveslot.setEnabled(false);
+    }
+    public void diceSound() throws IOException, UnsupportedAudioFileException, LineUnavailableException{
+        File file=new File("dice.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip player = AudioSystem.getClip();
+        player.open(audioStream);
+        player.start();
+    
     }
     /**
      * @param args the command line arguments
