@@ -1387,6 +1387,12 @@ public class View extends javax.swing.JFrame {
         bt_saveplayer.setEnabled(false);
         bt_saveslot.setEnabled(false);
     }
+    /**
+     * play roll dice sound effect
+     * @throws IOException
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException 
+     */
     public void diceSound() throws IOException, UnsupportedAudioFileException, LineUnavailableException{
         File file=new File("dice.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
